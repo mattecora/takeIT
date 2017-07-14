@@ -1,0 +1,62 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.navbar img {
+  height: 50px;
+  padding: 5px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.jumbotron img {
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.jumbotron-text {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 10px;
+}
+
+#jumbo-index {
+  background-image: url("media/bg-home.jpg");
+}
+
+#jumbo-about {
+  background-image: url("media/team.jpg");
+}
+
+.row {
+  padding: 10px;
+}
+
+.row img {
+  max-width: 50%;
+  display: block;
+  margin: auto;
+  padding: 10px;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.media img {
+  max-height: 150px;
+  border-radius: 10px;
+}
+
+.animated {
+  animation-duration: 0.75s;
+}
