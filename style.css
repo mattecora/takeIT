@@ -41,15 +41,22 @@ body {
   padding: 10px;
 }
 
-.row img {
-  max-width: 50%;
-  display: block;
-  margin: auto;
-  padding: 10px;
+.glyph-cont {
+  font-size: 750%;
+  text-align: center;
 }
 
-.container h1 {
+.container h1,
+.container h2,
+.container h3 {
   text-align: center;
+}
+
+#eialogo {
+  max-width: 300px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
 }
 
 .media img {
