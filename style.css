@@ -64,6 +64,15 @@ body {
   border-radius: 10px;
 }
 
+.form {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.inputp {
+  text-align: center;
+}
+
 .animated {
   animation-duration: 0.75s;
 }

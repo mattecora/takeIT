@@ -36,7 +36,7 @@
           <li class="active"><a href="about.php">About us</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Get in</a></li>
+          <li><a href="login.php">Get in</a></li>
         </ul>
       </div>
     </div>
