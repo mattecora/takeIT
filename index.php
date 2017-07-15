@@ -26,14 +26,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand"><a href="./index.php"><img src="media/logo.png" /></a></a>
+        <a class="navbar-brand"><a href="index.php"><img src="media/logo.png" /></a></a>
       </div>
 
       <!-- Navbar elements -->
       <div class="collapse navbar-collapse" id="top_navbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="./index.php">Home page</a></li>
-          <li><a href="./about.php">About us</a></li>
+          <li class="active"><a href="index.php">Home page</a></li>
+          <li><a href="about.php">About us</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Get in</a></li>

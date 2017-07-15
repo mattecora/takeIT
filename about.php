@@ -26,14 +26,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand"><a href="./index.php"><img src="media/logo.png" /></a></a>
+        <a class="navbar-brand"><a href="index.php"><img src="media/logo.png" /></a></a>
       </div>
 
       <!-- Navbar elements -->
       <div class="collapse navbar-collapse" id="top_navbar">
         <ul class="nav navbar-nav">
-          <li><a href="./index.php">Home page</a></li>
-          <li class="active"><a href="./about.php">About us</a></li>
+          <li><a href="index.php">Home page</a></li>
+          <li class="active"><a href="about.php">About us</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Get in</a></li>
@@ -102,7 +102,7 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
     </div>
-    
+
   </div>
 
   <!-- jQuery -->
