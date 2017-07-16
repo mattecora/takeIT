@@ -1,13 +1,32 @@
+/* General */
 body {
   padding-top: 70px;
   padding-bottom: 70px;
 }
 
+h1,
+h2,
+h3,
+.center {
+  text-align: center;
+}
+
+.row {
+  padding: 10px;
+  display: flex;
+}
+
+.animated {
+  animation-duration: 0.75s;
+}
+
+/* Navbar */
 .navbar img {
   height: 50px;
   padding: 5px;
 }
 
+/* Jumbotrons */
 .jumbotron {
   text-align: center;
   background-position: center center;
@@ -37,21 +56,21 @@ body {
   background-image: url("media/team.jpg");
 }
 
-.row {
-  padding: 10px;
-}
-
+/* Big glyph */
 .glyph-cont {
   font-size: 750%;
   text-align: center;
 }
 
-.container h1,
-.container h2,
-.container h3 {
-  text-align: center;
+/* Forms with border */
+.form {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  height: 100%;
 }
 
+/* index.php */
 #eialogo {
   max-width: 300px;
   display: block;
@@ -59,20 +78,14 @@ body {
   border-radius: 10px;
 }
 
+/* about.php */
 .media img {
   max-height: 150px;
   border-radius: 10px;
 }
 
-.form {
-  border: 1px solid grey;
-  border-radius: 5px;
-}
-
-.inputp {
-  text-align: center;
-}
-
-.animated {
-  animation-duration: 0.75s;
+/* app/index.php */
+.bigbtn {
+  width: 100%;
+  height: 100%;
 }
