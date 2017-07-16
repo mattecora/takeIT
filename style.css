@@ -21,7 +21,11 @@ h3,
 }
 
 /* Navbar */
-.navbar img {
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand img {
   height: 50px;
   padding: 5px;
 }
