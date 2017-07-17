@@ -11,4 +11,20 @@
       return true;
     return false;
   }
+
+  function check_logged() {
+    if (session_status() != PHP_SESSION_ACTIVE)
+      session_start();
+    if (empty($_SESSION["user"]) || empty($_SESSION["pwd"])) {
+      include("error.php");
+      die();
+    }
+  }
+
+  function reset_login() {
+    if (session_status() == PHP_SESSION_ACTIVE) {
+      session_unset();
+      session_destroy();
+    }
+  }
 ?>

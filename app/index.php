@@ -1,5 +1,6 @@
 <?php
   include("functions.php");
+
   $db = db_connect();
   if (!empty($_POST["user"]) && !empty($_POST["pwd"]) && check_login($db, $_POST["user"], $_POST["pwd"])) {
     session_start();
@@ -7,10 +8,8 @@
     $_SESSION["pwd"] = $_POST["pwd"];
   }
   $db->close();
-  if (empty($_SESSION["user"]) || empty($_SESSION["pwd"])) {
-    include("error.php");
-    die();
-  }
+
+  check_logged();
 ?>
 
 <!DOCTYPE html>

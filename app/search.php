@@ -1,9 +1,6 @@
 <?php
-  session_start();
-  if (empty($_SESSION["user"]) || empty($_SESSION["pwd"])) {
-    include("error.php");
-    die();
-  }
+  include("functions.php");
+  check_logged();
 ?>
 
 <!DOCTYPE html>

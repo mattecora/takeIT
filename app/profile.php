@@ -1,9 +1,22 @@
 <?php
-  session_start();
-  if (empty($_SESSION["user"]) || empty($_SESSION["pwd"])) {
-    include("error.php");
-    die();
-  }
+  include("functions.php");
+  check_logged();
+
+  $db = db_connect();
+
+  $info = $db->query("SELECT * FROM user WHERE User = '$_SESSION[user]'")->fetch_array();
+
+  $purch_query = $db->query("SELECT id FROM purchase WHERE User = '$_SESSION[user]'");
+  $purchases = array();
+  while ($row = $purch_query->fetch_array())
+    $purchases[] = $row[0];
+
+  $contrib_query = $db->query("SELECT id FROM experience WHERE User = '$_SESSION[user]'");
+  $contributions = array();
+  while ($row = $contrib_query->fetch_array())
+    $contributions[] = $row[0];
+
+  $db->close();
 ?>
 
 <!DOCTYPE html>
@@ -61,9 +74,9 @@
         <div class="form">
           <h3>Login data</h3>
           <form method="post" action="app/index.php" id="info_update_form">
-            <p class="center"><input id="user" type="text" class="form-control" placeholder="Your username" aria-describedby="Insert your username"></p>
-            <p class="center"><input id="pass" type="password" class="form-control" placeholder="Your password" aria-describedby="Insert your password"></p>
-            <p class="center"><button type="submit" class="btn btn-primary">Update info</button></p>
+            <p class="center">Username: <?php echo $info["User"]; ?></p>
+            <p class="center">Name: <?php echo $info["Name"]; ?></p>
+            <p class="center">Surname: <?php echo $info["Surname"]; ?></p>
           </form>
         </div>
       </div>
@@ -73,9 +86,10 @@
         <div class="form">
           <h3>Purchases</h3>
           <ul>
-            <li><a href="#">Example</a></li>
-            <li><a href="#">Example</a></li>
-            <li><a href="#">Example</a></li>
+            <?php
+              foreach ($purchases as $id)
+                echo "<li><a href=\"#\">Experience #$id</a></li>";
+            ?>
           </ul>
         </div>
       </div>
@@ -85,9 +99,10 @@
         <div class="form">
           <h3>Contributions</h3>
           <ul>
-            <li><a href="#">Example</a></li>
-            <li><a href="#">Example</a></li>
-            <li><a href="#">Example</a></li>
+            <?php
+              foreach ($contributions as $id)
+                echo "<li><a href=\"#\">Experience #$id</a></li>";
+            ?>
           </ul>
         </div>
       </div>
