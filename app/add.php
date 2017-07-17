@@ -43,9 +43,26 @@
     </div>
   </nav>
 
-  <!-- Content -->
   <div class="container">
     <h1>Add an experience</h1>
+  </div>
+
+  <!-- Content -->
+  <div class="container animated fadeInUp">
+    <!-- Experience info form -->
+    <form method="post" action="add.php" id="exp_info_form">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <p class="center"><input id="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <p class="center"><textarea class="form-control" rows="10">Describe your experience</textarea></p>
+          <p class="center"><button type="submit" class="btn btn-primary">Add experience</button></p>
+        </div>
+      </div>
+    </form>
   </div>
 
   <!-- jQuery -->

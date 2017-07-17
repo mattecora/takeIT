@@ -46,21 +46,21 @@
   <!-- Content -->
   <div class="container">
     <h1>Your profile</h1>
-    <div class="row">
+    <div class="row animated fadeInUp">
       <!-- Login data -->
-      <div class="col-md-4 animated fadeInUp">
+      <div class="col-md-4">
         <div class="form">
           <h3>Login data</h3>
           <form method="post" action="app/index.php" id="info_update_form">
-            <p class="inputp"><input id="user" type="text" class="form-control" placeholder="Your username" aria-describedby="Insert your username"></p>
-            <p class="inputp"><input id="pass" type="password" class="form-control" placeholder="Your password" aria-describedby="Insert your password"></p>
-            <p class="inputp"><button type="submit" class="btn btn-primary">Update info</button></p>
+            <p class="center"><input id="user" type="text" class="form-control" placeholder="Your username" aria-describedby="Insert your username"></p>
+            <p class="center"><input id="pass" type="password" class="form-control" placeholder="Your password" aria-describedby="Insert your password"></p>
+            <p class="center"><button type="submit" class="btn btn-primary">Update info</button></p>
           </form>
         </div>
       </div>
 
       <!-- Purchases -->
-      <div class="col-md-4 animated fadeInUp">
+      <div class="col-md-4">
         <div class="form">
           <h3>Purchases</h3>
           <ul>
@@ -72,7 +72,7 @@
       </div>
 
       <!-- Contributions -->
-      <div class="col-md-4 animated fadeInUp">
+      <div class="col-md-4">
         <div class="form">
           <h3>Contributions</h3>
           <ul>

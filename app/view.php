@@ -44,57 +44,34 @@
   </nav>
 
   <div class="container">
-    <h1>Search an experience</h1>
+    <h1>View the experience</h1>
   </div>
 
   <!-- Content -->
   <div class="container animated fadeInUp">
-    <!-- Search form -->
     <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <form class="form" method="post" action="search.php" id="company_form">
-          <p class="center"><input id="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company"></p>
-          <p class="center"><button type="submit" class="btn btn-primary">Search company</button></p>
-        </form>
+      <div class="col-md-4">
+        <h3>Author</h3>
+        <p class="center">Author of the experience</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Title</h3>
+        <p class="center">Title of the experience</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Upvotes</h3>
+        <p class="center">0</p>
       </div>
     </div>
 
-    <!-- Results -->
-    <table class="table table-striped">
-      <!-- Header -->
-      <thead>
-        <tr>
-          <th>Number</th>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Votes</th>
-        </tr>
-      </thead>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
 
-      <!-- Content -->
-      <tbody>
-        <tr>
-          <td><a href="view.php">1</a></td>
-          <td>Experience 1</td>
-          <td>Author 1</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <td><a href="view.php">2</a></td>
-          <td>Experience 2</td>
-          <td>Author 2</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td><a href="view.php">3</a></td>
-          <td>Experience 3</td>
-          <td>Author 3</td>
-          <td>120</td>
-        </tr>
-      </tbody>
-    </table>
+    <p class="center"><button onclick="window.history.back();" class="btn btn-primary">Go back</button></p>
   </div>
-
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Bootstrap JS -->
