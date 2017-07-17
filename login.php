@@ -13,9 +13,6 @@
   <link rel="stylesheet" href="style.css">
 
   <title>EIA TakeIt</title>
-
-  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-
 </head>
 <body>
   <!-- Navbar -->
@@ -53,13 +50,13 @@
       <div class="col-md-6 col-md-offset-3 animated fadeInUp">
         <div class="form">
           <h3>Login</h3>
-          <p class="center"><input id="txtEmail" type="text" class="form-control" placeholder="prova@email.com" aria-describedby="Insert your username"></p>
-          <p class="center"><input id="txtPassword" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
-          <p class="center">
-            <button id="btnSignin" class="btn btn-primary">Sign In</button>
-            <button id="btnSignup" class="btn btn-primary">Sign Up</button>
-          </p>
+          <form method="post" action="app/index.php" id="login_form">
+            <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
+            <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
+            <p class="center"><button type="submit" class="btn btn-primary">Login</button></p>
+          </form>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -68,8 +65,5 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <script src="login.js"></script>
-
-  </body>
+</body>
 </html>

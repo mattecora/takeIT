@@ -1,11 +1,3 @@
-<?php
-  session_start();
-  if (empty($_SESSION["user"]) || empty($_SESSION["pwd"])) {
-    include("error.php");
-    die();
-  }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +10,12 @@
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <!-- Own stylesheet -->
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
 
   <title>EIA TakeIt</title>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script> -->
+
 </head>
 <body>
   <!-- Navbar -->
@@ -34,49 +29,47 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php"><img src="../media/logo.png" /></a>
+        <a class="navbar-brand" href="index.php"><img src="media/logo.png" /></a>
       </div>
 
       <!-- Navbar elements -->
       <div class="collapse navbar-collapse" id="top_navbar">
         <ul class="nav navbar-nav">
-          <li><a href="search.php">Search</a></li>
-          <li class="active"><a href="add.php">Add</a></li>
-          <li><a href="profile.php">Profile</a></li>
-          <p class="navbar-text">Signed in as <?php echo($_SESSION["user"]); ?></p>
+          <li><a href="index.php">Home page</a></li>
+          <li><a href="about.php">About us</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../index.php">Get out</a></li>
+          <li class="active"><a href="login.php">Get in</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container">
-    <h1>Add an experience</h1>
-  </div>
-
   <!-- Content -->
-  <div class="container animated fadeInUp">
-    <!-- Experience info form -->
-    <form method="post" action="add.php" id="exp_info_form">
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-          <p class="center"><input id="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company"></p>
+  <div class="container">
+    <h1>Login or register to takeIT!</h1>
+    <div class="row">
+      <!-- Login form -->
+      <div class="col-md-6 col-md-offset-3 animated fadeInUp">
+        <div class="form">
+          <h3>Login</h3>
+          <p class="center"><input id="txtEmail" type="text" class="form-control" placeholder="prova@email.com" aria-describedby="Insert your username"></p>
+          <p class="center"><input id="txtPassword" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
+          <p class="center">
+            <button id="btnSignin" class="btn btn-primary">Sign In</button>
+            <button id="btnSignup" class="btn btn-primary">Sign Up</button>
+          </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <p class="center"><textarea class="form-control" rows="10">Describe your experience</textarea></p>
-          <p class="center"><button type="submit" class="btn btn-primary">Add experience</button></p>
-        </div>
-      </div>
-    </form>
+    </div>
   </div>
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
+
+  <!-- <script src="login.js"></script> -->
+
+  </body>
 </html>

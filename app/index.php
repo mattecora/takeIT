@@ -1,3 +1,18 @@
+<?php
+  include("functions.php");
+  $db = db_connect();
+  if (!empty($_POST["user"]) && !empty($_POST["pwd"]) && check_login($db, $_POST["user"], $_POST["pwd"])) {
+    session_start();
+    $_SESSION["user"] = $_POST["user"];
+    $_SESSION["pwd"] = $_POST["pwd"];
+  }
+  $db->close();
+  if (empty($_SESSION["user"]) || empty($_SESSION["pwd"])) {
+    include("error.php");
+    die();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +50,7 @@
           <li><a href="search.php">Search</a></li>
           <li><a href="add.php">Add</a></li>
           <li><a href="profile.php">Profile</a></li>
+          <p class="navbar-text">Signed in as <?php echo($_SESSION["user"]); ?></p>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../index.php">Get out</a></li>

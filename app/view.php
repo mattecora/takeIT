@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if (empty($_SESSION["user"]) || empty($_SESSION["pwd"])) {
+    include("error.php");
+    die();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +43,7 @@
           <li class="active"><a href="search.php">Search</a></li>
           <li><a href="add.php">Add</a></li>
           <li><a href="profile.php">Profile</a></li>
+          <p class="navbar-text">Signed in as <?php echo($_SESSION["user"]); ?></p>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../index.php">Get out</a></li>
