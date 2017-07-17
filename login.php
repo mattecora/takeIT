@@ -50,22 +50,15 @@
     <h1>Login or register to takeIT!</h1>
     <div class="row">
       <!-- Login form -->
-      <div class="col-md-4 col-md-offset-1 animated fadeInUp">
+      <div class="col-md-6 col-md-offset-3 animated fadeInUp">
         <div class="form">
           <h3>Login</h3>
-          <p class="center"><input id="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
-          <p class="center"><input id="pass" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
-          <p class="center"><button type="submit" class="btn btn-primary">Login</button></p>
-        </div>
-      </div>
-
-      <!-- Register form -->
-      <div class="col-md-4 col-md-offset-1 animated fadeInUp">
-        <div class="form">
-          <h3>Register</h3>
-          <p class="center"><input id="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
-          <p class="center"><input id="pass" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
-          <p class="center"><button type="submit" class="btn btn-primary">Register</button></p>
+          <p class="center"><input id="txtEmail" type="text" class="form-control" placeholder="prova@email.com" aria-describedby="Insert your username"></p>
+          <p class="center"><input id="txtPassword" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
+          <p class="center">
+            <button id="btnSignin" class="btn btn-primary">Sign In</button>
+            <button id="btnSignup" class="btn btn-primary">Sign Up</button>
+          </p>
         </div>
       </div>
     </div>
@@ -79,4 +72,4 @@
   <script src="login.js"></script>
 
   </body>
-  </html>
+</html>
