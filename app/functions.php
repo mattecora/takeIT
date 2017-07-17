@@ -22,9 +22,19 @@
   }
 
   function reset_login() {
-    if (session_status() == PHP_SESSION_ACTIVE) {
-      session_unset();
-      session_destroy();
-    }
+    session_start();
+    session_unset();
+  }
+
+  function draw_msg_ok($msg) {
+    echo "<div class=\"alert alert-success alert-dismissible\" role=\"alert\">
+      <p><span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span> $msg </p>
+    </div>";
+  }
+
+  function draw_msg_err($msg) {
+    echo "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">
+      <p><span class=\"glyphicon glyphicon-tick\" aria-hidden=\"true\"></span> $msg </p>
+    </div>";
   }
 ?>

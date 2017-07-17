@@ -15,6 +15,33 @@
   <title>EIA TakeIt</title>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Navbar mobile -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top_navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.php"><img src="../media/logo.png" /></a>
+      </div>
+
+      <!-- Navbar elements -->
+      <div class="collapse navbar-collapse" id="top_navbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.php">Home page</a></li>
+          <li><a href="about.php">About us</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="login.php">Get in</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <!-- Content -->
   <div class="container">
     <div class="alert alert-danger" role="alert">
