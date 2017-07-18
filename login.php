@@ -74,9 +74,9 @@
     <div class="container">
       <div class="row">
         <!-- Login form -->
-        <div class="col-md-6 col-md-offset-3 animated fadeInUp">
-          <div class="form">
-            <h3 style="text-align: center; margin-bottom: 30px;">Login</h3>
+        <div class="col-md-4 col-md-offset-4">
+          <div class="form" style="text-align: center;">
+            <h3 style="margin-bottom: 30px;">Login</h3>
             <form method="post" action="app/index.php" id="login_form">
               <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
               <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
