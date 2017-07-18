@@ -28,11 +28,8 @@
     $purch = true;
 
   /* Execute vote */
-  if (isset($_POST["frmname"]) && $_POST["frmname"] == "vote") {
-    $query_vote_1 = $db->query("UPDATE experience SET Votes = Votes+1 WHERE Id = $_GET[id]");
-    $info["Votes"]++;
-    $query_vote_2 = $db->query("INSERT INTO vote VALUES ('$_SESSION[user]', $_GET[id])");
-  }
+  if (isset($_POST["frmname"]) && $_POST["frmname"] == "vote")
+    $query_vote = $db->query("INSERT INTO vote VALUES ('$_SESSION[user]', $_GET[id])");
 
   /* Check if user can vote */
   $query_check_vote = $db->query("SELECT * FROM vote WHERE User = '$_SESSION[user]' AND Id = $_GET[id]");

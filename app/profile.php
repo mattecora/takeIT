@@ -85,12 +85,16 @@
       <div class="col-md-4">
         <div class="form">
           <h3>Purchases</h3>
-          <ul>
-            <?php
+          <?php
+            if (count($purchases) == 0)
+              echo "<p class=\"center\">No purchases yet!</p>";
+            else {
+              echo "<ul>";
               foreach ($purchases as $id)
                 echo "<li><a href=\"#\">Experience #$id</a></li>";
-            ?>
-          </ul>
+              echo "</ul>";
+            }
+          ?>
         </div>
       </div>
 
@@ -98,12 +102,16 @@
       <div class="col-md-4">
         <div class="form">
           <h3>Contributions</h3>
-          <ul>
-            <?php
+          <?php
+            if (count($contributions) == 0)
+              echo "<p class=\"center\">No contributions yet!</p>";
+            else {
+              echo "<ul>";
               foreach ($contributions as $id)
                 echo "<li><a href=\"#\">Experience #$id</a></li>";
-            ?>
-          </ul>
+              echo "</ul>";
+            }
+          ?>
         </div>
       </div>
     </div>
