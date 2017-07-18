@@ -13,10 +13,14 @@
   background-image: url(../photos/bg-home-overlay.jpg);
 }
 
-.img_about_inside {
+.st-member {
+  text-align: center;
+}
+
+.st-member .img_about_inside {
   border-radius: 100%;
-  height: 100%;
-  width: 100%;
+  height: 90%;
+  width: 90%;
 }
 
 .section-title:before {
