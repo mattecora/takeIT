@@ -1,3 +1,14 @@
+@media only screen and (max-width: 766px) {
+  .collapsing, .in {
+    background-color: rgba(69, 90, 100, 0.9);
+  }
+
+  .navbar-toggle {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
 .home {
   background-image: url(../photos/bg-home-overlay.jpg);
 }
