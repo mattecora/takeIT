@@ -40,6 +40,12 @@
     $can_vote = true;
   else $can_vote = false;
 
+  /* Check votes number */
+  $info["Votes"] = count_votes($db, $_GET["id"]);
+
+  /* Check purchases number */
+  $info["Purchases"] = count_purchases($db, $_GET["id"]);
+
   $db->close();
 ?>
 
@@ -116,17 +122,21 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h3>Date</h3>
         <p class="center"><?php echo $info["Date"]; ?></p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h3>Position</h3>
         <p class="center"><?php echo $info["Position"]; ?></p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h3>Company</h3>
         <p class="center"><?php echo $info["Company"]; ?></p>
+      </div>
+      <div class="col-md-3">
+        <h3>Purchases</h3>
+        <p class="center"><?php echo $info["Purchases"]; ?></p>
       </div>
     </div>
 

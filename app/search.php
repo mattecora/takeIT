@@ -76,7 +76,6 @@
           <th>Author</th>
           <th>Date</th>
           <th>Position</th>
-          <th>Votes</th>
         </tr>
       </thead>
 
@@ -99,7 +98,6 @@
               <td>$row[User]</td>
               <td>$row[Date]</td>
               <td>$row[Position]</td>
-              <td>$row[Votes]</td>
             </tr>";
           }
 
