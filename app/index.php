@@ -22,13 +22,13 @@
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,400italic,600,300italic,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
   <!-- Bootstrap -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/owl.carousel.css" rel="stylesheet">
-  <link href="css/owl.theme.css" rel="stylesheet">
-  <link href="css/owl.transitions.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/own.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
+  <link href="../css/owl.theme.css" rel="stylesheet">
+  <link href="../css/owl.carousel.css" rel="stylesheet">
+  <link href="../css/owl.transitions.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/own.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,17 +49,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./#home"><img src="photos/logo_white.png" alt="" class="img-responsive"></a>
+          <a class="navbar-brand" href="../#home"><img src="photos/logo_white.png" alt="" class="img-responsive"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="search.php">Search</a></li>
-            <li><a href="add.php">Add</a></li>
-            <li><a href="profile.php">Profile</a></li>
+            <li><a href="./search.php">Search</a></li>
+            <li><a href="./add.php">Add</a></li>
+            <li><a href="./profile.php">Profile</a></li>
             <p class="navbar-text">Signed in as <?php echo($_SESSION["user"]); ?></p>
-            <li><a href="../index.php">Get out</a></li>
+            <li><a href="../index.html">Get out</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
@@ -77,22 +77,6 @@
       </div>
     </div>
   </section>
-
-
-      <!-- Navbar elements -->
-      <div class="collapse navbar-collapse" id="top_navbar">
-        <ul class="nav navbar-nav">
-          <li><a href="search.php">Search</a></li>
-          <li><a href="add.php">Add</a></li>
-          <li><a href="profile.php">Profile</a></li>
-          <p class="navbar-text">Signed in as <?php echo($_SESSION["user"]); ?></p>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="../index.php">Get out</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
   <!-- Content -->
   <div class="container">
@@ -131,18 +115,18 @@
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="js/jquery.min.js"></script>
+  <script src="../js/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/jquery.stellar.js"></script>
-  <script src="js/jquery.appear.js"></script>
-  <script src="js/jquery.nicescroll.min.js"></script>
-  <script src="js/jquery.countTo.js"></script>
-  <script src="js/jquery.shuffle.modernizr.js"></script>
-  <script src="js/jquery.shuffle.js"></script>
-  <script src="js/owl.carousel.js"></script>
-  <script src="js/jquery.ajaxchimp.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.easing.min.js"></script>
+  <script src="../js/jquery.stellar.js"></script>
+  <script src="../js/jquery.appear.js"></script>
+  <script src="../js/jquery.nicescroll.min.js"></script>
+  <script src="../js/jquery.countTo.js"></script>
+  <script src="../js/jquery.shuffle.modernizr.js"></script>
+  <script src="../js/jquery.shuffle.js"></script>
+  <script src="../js/owl.carousel.js"></script>
+  <script src="../js/jquery.ajaxchimp.min.js"></script>
+  <script src="../js/script.js"></script>
   </body>
-  </html>
+</html>
