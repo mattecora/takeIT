@@ -43,6 +43,8 @@
   /* Check purchases number */
   $info["Purchases"] = count_purchases($db, $_GET["id"]);
 
+  $mail = $db->query("SELECT Mail FROM user WHERE User = '$info[User]'")->fetch_array()[0];
+
   $db->close();
 ?>
 
@@ -141,6 +143,11 @@
       /* Purchase button */
       if ($purch) {
         echo "<p>" . $info["Description"] . "</p>";
+        echo "<p class=\"center\">
+          <a href=\"mailto:$mail\">
+          <button type=\"button\" class=\"btn btn-primary\">
+            <span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span> Get in touch with this person
+          </button></a></p>";
       } else {
         echo "<form method=\"post\">
         <p class=\"center\">You haven't purchased this experience yet.</p>
