@@ -1,6 +1,13 @@
 <?php
   include("functions.php");
   check_logged();
+
+  if (!empty($_POST["company"]) && !empty($_POST["title"]) && !empty($_POST["date"]) && !empty($_POST["position"]) && !empty($_POST["description"])) {
+    $db = db_connect();
+    $query = $db->query("INSERT INTO experience(Company, Date, User, Position, Title, Description) VALUES
+      ('$_POST[company]', '$_POST[date]', '$_SESSION[user]', '$_POST[position]', '$_POST[title]', '$_POST[description]')");
+    $db->close();
+  }
 ?>
 
 <!DOCTYPE html>
@@ -57,14 +64,25 @@
   <div class="container animated fadeInUp">
     <!-- Experience info form -->
     <form method="post" action="add.php" id="exp_info_form">
+      <?php
+        if (isset($query) && $query == true)
+          draw_msg_ok("Your experience has been added successfully!");
+        else if (isset($query) && $query == false)
+          draw_msg_err("There was an error in adding your experience!");
+      ?>
+
+      <!-- General info -->
       <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-          <p class="center"><input id="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company"></p>
-        </div>
+        <div class="col-md-3"><h4>Company</h4><input name="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company"></div>
+        <div class="col-md-3"><h4>Title</h4><input name="title" type="text" class="form-control" placeholder="Title" aria-describedby="Insert the title"></div>
+        <div class="col-md-3"><h4>Date</h4><input name="date" type="text" class="form-control" placeholder="Date" aria-describedby="Insert the date"></div>
+        <div class="col-md-3"><h4>Position</h4><input name="position" type="text" class="form-control" placeholder="Position" aria-describedby="Insert the position"></div>
       </div>
+
+      <!-- Textarea form -->
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <p class="center"><textarea class="form-control" rows="10">Describe your experience</textarea></p>
+          <p class="center"><textarea name="description" class="form-control" rows="10" placeholder="Describe your experience here"></textarea></p>
           <p class="center"><button type="submit" class="btn btn-primary">Add experience</button></p>
         </div>
       </div>

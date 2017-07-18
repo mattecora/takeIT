@@ -58,8 +58,8 @@
     <!-- Search form -->
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <form class="form" method="post" action="search.php" id="company_form">
-          <p class="center"><input id="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company"></p>
+        <form class="form" method="get" action="search.php" id="company_form">
+          <p class="center"><input name="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company"></p>
           <p class="center"><button type="submit" class="btn btn-primary">Search company</button></p>
         </form>
       </div>
@@ -71,32 +71,40 @@
       <thead>
         <tr>
           <th>Number</th>
+          <th>Company</th>
           <th>Title</th>
           <th>Author</th>
+          <th>Date</th>
+          <th>Position</th>
           <th>Votes</th>
         </tr>
       </thead>
 
       <!-- Content -->
       <tbody>
-        <tr>
-          <td><a href="view.php">1</a></td>
-          <td>Experience 1</td>
-          <td>Author 1</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <td><a href="view.php">2</a></td>
-          <td>Experience 2</td>
-          <td>Author 2</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td><a href="view.php">3</a></td>
-          <td>Experience 3</td>
-          <td>Author 3</td>
-          <td>120</td>
-        </tr>
+        <?php
+          $db = db_connect();
+
+          if (empty($_GET["company"])) {
+            $query = $db->query("SELECT * FROM experience");
+          } else {
+            $query = $db->query("SELECT * FROM experience WHERE Company = '$_GET[company]'");
+          }
+
+          while ($row = $query->fetch_assoc()) {
+            echo "<tr>
+              <td><a href=\"view.php?id=$row[Id]\">$row[Id]</a></td>
+              <td>$row[Company]</td>
+              <td>$row[Title]</td>
+              <td>$row[User]</td>
+              <td>$row[Date]</td>
+              <td>$row[Position]</td>
+              <td>$row[Votes]</td>
+            </tr>";
+          }
+
+          $db->close();
+        ?>
       </tbody>
     </table>
   </div>

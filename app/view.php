@@ -1,6 +1,46 @@
 <?php
   include("functions.php");
   check_logged();
+
+  if (empty($_GET["id"])) {
+    include("error.php");
+    die();
+  }
+
+  $db = db_connect();
+
+  /* Execute purchase */
+  if (isset($_POST["frmname"]) && $_POST["frmname"] == "purchase") {
+    $query_purchase = $db->query("INSERT INTO purchase VALUES ('$_SESSION[user]', $_GET[id])");
+  }
+
+  /* Check if user purchased */
+  $query_check_purchase = $db->query("SELECT * FROM purchase WHERE User = '$_SESSION[user]' AND Id = $_GET[id]");
+  if ($query_check_purchase->num_rows > 0)
+    $purch = true;
+  else $purch = false;
+
+  /* Get the experience info */
+  $query_info = $db->query("SELECT * FROM experience WHERE Id = $_GET[id]");
+  $info = $query_info->fetch_assoc();
+
+  if (!$purch && $info['User'] == $_SESSION["user"])
+    $purch = true;
+
+  /* Execute vote */
+  if (isset($_POST["frmname"]) && $_POST["frmname"] == "vote") {
+    $query_vote_1 = $db->query("UPDATE experience SET Votes = Votes+1 WHERE Id = $_GET[id]");
+    $info["Votes"]++;
+    $query_vote_2 = $db->query("INSERT INTO vote VALUES ('$_SESSION[user]', $_GET[id])");
+  }
+
+  /* Check if user can vote */
+  $query_check_vote = $db->query("SELECT * FROM vote WHERE User = '$_SESSION[user]' AND Id = $_GET[id]");
+  if ($query_check_vote->num_rows == 0 && $info["User"] != $_SESSION["user"] && $purch)
+    $can_vote = true;
+  else $can_vote = false;
+
+  $db->close();
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +91,12 @@
 
   <div class="container">
     <h1>View the experience</h1>
+    <?php
+      if (isset($query_purchase) && $query_purchase == true)
+        draw_msg_ok("You successfully purchased this experience!");
+      else if (isset($query_purchase) && $query_purchase == false)
+        draw_msg_err("There was an error in purchasing this experience!");
+    ?>
   </div>
 
   <!-- Content -->
@@ -58,25 +104,54 @@
     <div class="row">
       <div class="col-md-4">
         <h3>Author</h3>
-        <p class="center">Author of the experience</p>
+        <p class="center"><?php echo $info["User"]; ?></p>
       </div>
       <div class="col-md-4">
         <h3>Title</h3>
-        <p class="center">Title of the experience</p>
+        <p class="center"><?php echo $info["Title"]; ?></p>
       </div>
       <div class="col-md-4">
-        <h3>Upvotes</h3>
-        <p class="center">0</p>
+        <h3>Votes</h3>
+        <p class="center"><?php echo $info["Votes"]; ?></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Date</h3>
+        <p class="center"><?php echo $info["Date"]; ?></p>
+      </div>
+      <div class="col-md-4">
+        <h3>Position</h3>
+        <p class="center"><?php echo $info["Position"]; ?></p>
+      </div>
+      <div class="col-md-4">
+        <h3>Company</h3>
+        <p class="center"><?php echo $info["Company"]; ?></p>
       </div>
     </div>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <?php
+      /* Purchase button */
+      if ($purch) {
+        echo "<p>" . $info["Description"] . "</p>";
+      } else {
+        echo "<form method=\"post\">
+        <p class=\"center\">You haven't purchased this experience yet.</p>
+        <p class=\"center\"><button type=\"submit\" class=\"btn btn-primary\">Purchase now!</button></p>
+        <input type=\"hidden\" name=\"frmname\" value=\"purchase\"/>
+        </form>";
+      }
 
-    <p class="center"><button onclick="window.history.back();" class="btn btn-primary">Go back</button></p>
+      /* Vote button */
+      if ($can_vote) {
+        echo "<form method=\"post\">
+        <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">Vote this experience!</button></p>
+        <input type=\"hidden\" name=\"frmname\" value=\"vote\"/>
+        </form>";
+      }
+    ?>
+
+      <p class="center"><a href="search.php"><button class="btn btn-primary">Go back</button></a></p>
   </div>
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
