@@ -27,14 +27,14 @@
   }
 
   function draw_msg_ok($msg) {
-    echo "<div class=\"alert alert-success alert-dismissible\" role=\"alert\">
-      <p><span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span> $msg </p>
+    echo "<div class=\"alert alert-success\" role=\"alert\">
+      <p><span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span> $msg </p>
     </div>";
   }
 
   function draw_msg_err($msg) {
     echo "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">
-      <p><span class=\"glyphicon glyphicon-tick\" aria-hidden=\"true\"></span> $msg </p>
+      <p><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span> $msg </p>
     </div>";
   }
 ?>

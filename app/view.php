@@ -137,7 +137,9 @@
       } else {
         echo "<form method=\"post\">
         <p class=\"center\">You haven't purchased this experience yet.</p>
-        <p class=\"center\"><button type=\"submit\" class=\"btn btn-primary\">Purchase now!</button></p>
+        <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">
+          <span style=\"font-size: 100%;\" class=\"glyphicon glyphicon-euro\"></span> Purchase now!
+        </button></p>
         <input type=\"hidden\" name=\"frmname\" value=\"purchase\"/>
         </form>";
       }
@@ -145,13 +147,17 @@
       /* Vote button */
       if ($can_vote) {
         echo "<form method=\"post\">
-        <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">Vote this experience!</button></p>
+        <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">
+          <span style=\"font-size: 100%;\" class=\"glyphicon glyphicon-thumbs-up\"></span> Vote this experience!
+        </button></p>
         <input type=\"hidden\" name=\"frmname\" value=\"vote\"/>
         </form>";
       }
     ?>
 
-      <p class="center"><a href="search.php"><button class="btn btn-primary">Go back</button></a></p>
+      <p class="center"><a href="search.php"><button class="btn btn-primary">
+        <span style="font-size: 100%" class="glyphicon glyphicon-arrow-left"></span> Go back
+      </button></a></p>
   </div>
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
