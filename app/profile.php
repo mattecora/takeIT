@@ -6,11 +6,6 @@
 
   $info = $db->query("SELECT * FROM user WHERE User = '$_SESSION[user]'")->fetch_array();
 
-  $purch_query = $db->query("SELECT id FROM purchase WHERE User = '$_SESSION[user]'");
-  $purchases = array();
-  while ($row = $purch_query->fetch_array())
-    $purchases[] = $row[0];
-
   $contrib_query = $db->query("SELECT id FROM experience WHERE User = '$_SESSION[user]'");
   $contributions = array();
   while ($row = $contrib_query->fetch_array())
@@ -90,7 +85,7 @@
     <div class="container">
       <div class="row">
         <!-- Login data -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-md-offset-1">
           <div class="center">
             <h3>Login data</h3>
             <hr>
@@ -100,26 +95,8 @@
           </div>
         </div>
 
-        <!-- Purchases -->
-        <div class="col-md-4">
-          <div class="center">
-            <h3>Purchases</h3>
-            <hr>
-            <?php
-              if (count($purchases) == 0)
-                echo "<p class=\"center\">No purchases yet!</p>";
-              else {
-                echo "<ul>";
-                foreach ($purchases as $id)
-                  echo "<li><a href=\"#\">Experience #$id</a></li>";
-                echo "</ul>";
-              }
-            ?>
-          </div>
-        </div>
-
         <!-- Contributions -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-md-offset-2">
           <div class="center">
             <h3>Contributions</h3>
             <hr>

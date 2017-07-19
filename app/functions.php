@@ -1,6 +1,6 @@
 <?php
   function db_connect() {
-    $db = new mysqli("localhost", "root", "", "takeit");
+    $db = new mysqli("localhost", "eiatakeit", "", "my_eiatakeit");
     return $db;
   }
 
@@ -40,9 +40,5 @@
 
   function count_votes($db, $id) {
     return $db->query("SELECT COUNT(*) FROM vote WHERE Id = $id")->fetch_array()[0];
-  }
-
-  function count_purchases($db, $id) {
-    return $db->query("SELECT COUNT(*) FROM purchase WHERE Id = $id")->fetch_array()[0];
   }
 ?>

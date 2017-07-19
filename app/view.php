@@ -14,18 +14,9 @@
     $query_purchase = $db->query("INSERT INTO purchase VALUES ('$_SESSION[user]', $_GET[id])");
   }
 
-  /* Check if user purchased */
-  $query_check_purchase = $db->query("SELECT * FROM purchase WHERE User = '$_SESSION[user]' AND Id = $_GET[id]");
-  if ($query_check_purchase->num_rows > 0)
-    $purch = true;
-  else $purch = false;
-
   /* Get the experience info */
   $query_info = $db->query("SELECT * FROM experience WHERE Id = $_GET[id]");
   $info = $query_info->fetch_assoc();
-
-  if (!$purch && $info['User'] == $_SESSION["user"])
-    $purch = true;
 
   /* Execute vote */
   if (isset($_POST["frmname"]) && $_POST["frmname"] == "vote")
@@ -33,15 +24,12 @@
 
   /* Check if user can vote */
   $query_check_vote = $db->query("SELECT * FROM vote WHERE User = '$_SESSION[user]' AND Id = $_GET[id]");
-  if ($query_check_vote->num_rows == 0 && $info["User"] != $_SESSION["user"] && $purch)
+  if ($query_check_vote->num_rows == 0 && $info["User"] != $_SESSION["user"])
     $can_vote = true;
   else $can_vote = false;
 
   /* Check votes number */
   $info["Votes"] = count_votes($db, $_GET["id"]);
-
-  /* Check purchases number */
-  $info["Purchases"] = count_purchases($db, $_GET["id"]);
 
   $mail = $db->query("SELECT Mail FROM user WHERE User = '$info[User]'")->fetch_array()[0];
 
@@ -115,7 +103,7 @@
           <i class="fa fa-briefcase"></i> <?php echo $info["Position"]; ?>
         </div>
       </div>
-      <div class="row row-info-exp" style="padding-top: 20px;">
+      <div class="row row-info-exp" style="padding-top: 30px;">
         <div class="col-md-4 col-md-offset-1">
           <i class="fa fa-user"></i> <?php echo $info["User"]; ?>
         </div>
@@ -139,24 +127,19 @@
   <section class="content">
     <div class="container">
       <?php
-        /* Purchase button */
-        if ($purch) {
-          echo "<p>" . $info["Description"] . "</p>";
-          echo "<p class=\"center\">
-            <a href=\"mailto:$mail\">
-            <button type=\"button\" class=\"btn btn-primary\">
-              <span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span> Get in touch with this person
-            </button></a></p>";
-        } else {
-          echo "<form method=\"post\">
-          <p class=\"center\">You haven't purchased this experience yet.</p>
-          <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">
-            <span style=\"font-size: 100%;\" class=\"glyphicon glyphicon-euro\"></span> Purchase now!
-          </button></p>
-          <input type=\"hidden\" name=\"frmname\" value=\"purchase\"/>
-          </form>";
-        }
+        /* Show experience */
+        echo "<p>" . $info["Description"] . "</p>";
+      ?>
 
+      <p class="center">
+        <a href="mailto:<?php echo $mail; ?>">
+          <button type="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Get in touch with this person
+          </button>
+        </a>
+      </p>
+
+      <?php
         /* Vote button */
         if ($can_vote) {
           echo "<form method=\"post\">
