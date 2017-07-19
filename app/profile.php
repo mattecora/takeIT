@@ -86,55 +86,58 @@
   </section>
 
   <!-- Content -->
-  <div class="container">
-    <div class="row">
-      <!-- Login data -->
-      <div class="col-md-4">
-        <div class="form">
-          <h3>Login data</h3>
-          <form method="post" action="app/index.php" id="info_update_form">
-            <p class="center">Username: <?php echo $info["User"]; ?></p>
-            <p class="center">Name: <?php echo $info["Name"]; ?></p>
-            <p class="center">Surname: <?php echo $info["Surname"]; ?></p>
-          </form>
+  <section class="content">
+    <div class="container">
+      <div class="row">
+        <!-- Login data -->
+        <div class="col-md-4">
+          <div class="center">
+            <h3>Login data</h3>
+            <hr>
+            <p>Username: <?php echo $info["User"]; ?></p>
+            <p>Name: <?php echo $info["Name"]; ?></p>
+            <p>Surname: <?php echo $info["Surname"]; ?></p>
+          </div>
         </div>
-      </div>
 
-      <!-- Purchases -->
-      <div class="col-md-4">
-        <div class="form">
-          <h3>Purchases</h3>
-          <?php
-            if (count($purchases) == 0)
-              echo "<p class=\"center\">No purchases yet!</p>";
-            else {
-              echo "<ul>";
-              foreach ($purchases as $id)
-                echo "<li><a href=\"#\">Experience #$id</a></li>";
-              echo "</ul>";
-            }
-          ?>
+        <!-- Purchases -->
+        <div class="col-md-4">
+          <div class="center">
+            <h3>Purchases</h3>
+            <hr>
+            <?php
+              if (count($purchases) == 0)
+                echo "<p class=\"center\">No purchases yet!</p>";
+              else {
+                echo "<ul>";
+                foreach ($purchases as $id)
+                  echo "<li><a href=\"#\">Experience #$id</a></li>";
+                echo "</ul>";
+              }
+            ?>
+          </div>
         </div>
-      </div>
 
-      <!-- Contributions -->
-      <div class="col-md-4">
-        <div class="form">
-          <h3>Contributions</h3>
-          <?php
-            if (count($contributions) == 0)
-              echo "<p class=\"center\">No contributions yet!</p>";
-            else {
-              echo "<ul>";
-              foreach ($contributions as $id)
-                echo "<li><a href=\"#\">Experience #$id</a></li>";
-              echo "</ul>";
-            }
-          ?>
+        <!-- Contributions -->
+        <div class="col-md-4">
+          <div class="center">
+            <h3>Contributions</h3>
+            <hr>
+            <?php
+              if (count($contributions) == 0)
+                echo "<p class=\"center\">No contributions yet!</p>";
+              else {
+                echo "<ul>";
+                foreach ($contributions as $id)
+                  echo "<li><a href=\"#\">Experience #$id</a></li>";
+                echo "</ul>";
+              }
+            ?>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery.min.js"></script>
