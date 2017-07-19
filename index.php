@@ -1,6 +1,12 @@
 <?php
   include("app/functions.php");
   reset_login();
+
+  if (!empty($_POST["mc-email"])) {
+    $db = db_connect();
+    $db->query("INSERT INTO newsletter VALUES ('" . $_POST["mc-email"] . "')");
+    $db->close();
+  }
 ?>
 
 <!DOCTYPE html>
@@ -296,9 +302,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h3 class="subscribe-title">Subscribe Newsletter</h3>
-						<form  role="form" class="subscribe-form">
+						<form method="post" action="./" role="form" class="subscribe-form">
 							<div class="input-group">
-								<input type="email" class="form-control" id="mc-email" placeholder="Enter E-mail...">
+								<input type="email" class="form-control" name="mc-email" placeholder="Enter E-mail...">
 								<span class="input-group-btn">
 									<button class="btn btn-main btn-lg" type="submit">Subscribe!</button>
 								</span>

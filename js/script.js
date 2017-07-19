@@ -86,20 +86,6 @@ $(document).ready(function () {
     	pagination: false
     });
 
-    ////// mailchimp //////
-    $(".subscribe-form").ajaxChimp({
-        callback: mcCallback,
-        url: "http://cantothemes.us8.list-manage2.com/subscribe/post?u=37a0cb83e98c8633253ad0acd&id=03d8ef0996" // Replace your mailchimp post url inside double quote "".
-    });
-
-    function mcCallback (res) {
-		if(res.result === 'success') {
-			$('.subscribe-result').html('<i class="pe-7s-check"></i>' + res.msg).delay(500).slideDown(1000).delay(10000).slideUp(1000);
-		}else if(res.result === 'error'){
-			$('.subscribe-result').html('<i class="pe-7s-close-circle"></i>' + res.msg).delay(500).slideDown(1000).delay(10000).slideUp(1000);
-		}
-	}
-
 
 	/*
      * Contact Form Validation Code
