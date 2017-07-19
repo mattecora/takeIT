@@ -70,8 +70,8 @@
 					<div class="col-md-12">
 						<div class="st-home-unit">
 							<div class="hero-txt">
-								<p class="hero-work" style="font-size: 20px;">Experiences - Mentors - Young Talents</p>
-								<h2 class="hero-title">Your ticket for success</h2>
+								<p class="hero-work" style="font-size: 36px;">Experiences - Mentors - Young Talents</p>
+								<h2 class="hero-title">Your ticket for dream job</h2>
 								<a href="#subscribe"><button class="btn btn-main btn-lg">Get Started</button></a>
 							</div>
 
