@@ -259,9 +259,7 @@
           <ul>
             <li class="active"><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#team">The Team</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="#subscribe">Subscribe</a></li>
+            li><a href="#subscribe">Subscribe</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="login.php">Login</a></li>
           </ul>
