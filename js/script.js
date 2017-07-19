@@ -1,7 +1,7 @@
-$(function () {
+$(document).ready(function () {
 
 	$(window).stellar({
-		horizontalScrolling: false 
+		horizontalScrolling: false
 	});
 
 	// Custom Scrollbar
@@ -39,27 +39,6 @@ $(function () {
 
 	$('[data-toggle="tooltip"]').tooltip();
 
-	
-
-
-    function home_height () {
-		var element = $('.st-home-unit'),
-			elemHeight = element.height(),
-			winHeight = $(window).height()
-			padding = (winHeight - elemHeight - 200) /2;
-
-		if (padding < 1 ) {
-			padding = 0;
-		};
-		element.css('padding', padding+'px 0');
-	}
-	home_height ();
-
-	$(window).resize(function () {
-		home_height ();
-	});
-
-
 	var fadeStart=$(window).height()/3 // 100px scroll or less will equiv to 1 opacity
     ,fadeUntil=$(window).height() // 200px scroll or more will equiv to 0 opacity
     ,fading = $('.st-home-unit')
@@ -88,7 +67,7 @@ $(function () {
 	});
 
 
-	
+
 
 
 	$(".testimonials-carousel ul").owlCarousel({
@@ -110,7 +89,7 @@ $(function () {
     ////// mailchimp //////
     $(".subscribe-form").ajaxChimp({
         callback: mcCallback,
-        url: "http://cantothemes.us8.list-manage2.com/subscribe/post?u=37a0cb83e98c8633253ad0acd&id=03d8ef0996" // Replace your mailchimp post url inside double quote "".  
+        url: "http://cantothemes.us8.list-manage2.com/subscribe/post?u=37a0cb83e98c8633253ad0acd&id=03d8ef0996" // Replace your mailchimp post url inside double quote "".
     });
 
     function mcCallback (res) {
@@ -130,17 +109,17 @@ $(function () {
           selector.addClass('formFieldError',500);
           return false;
         } else {
-          selector.removeClass('formFieldError',500); 
+          selector.removeClass('formFieldError',500);
           return true;
         }
     }
     function validateEmail(email) {
         var regex = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
         if (!regex.test(email.val())) {
-          email.addClass('formFieldError',500); 
+          email.addClass('formFieldError',500);
           return false;
         } else {
-          email.removeClass('formFieldError',500); 
+          email.removeClass('formFieldError',500);
           return true;
         }
     }
@@ -158,7 +137,7 @@ $(function () {
       if(!checkEmpty($this.find('#mssg'))) {
         result=false;
       }
-      
+
       if(result==false) {
         return false;
       }
@@ -168,9 +147,9 @@ $(function () {
       var data = $this.serialize();
 
       $.ajax({
-          url: "sender.php", 
-          type: "POST",        
-          data: data,     
+          url: "sender.php",
+          type: "POST",
+          data: data,
           cache: false,
           success: function (html) {
           	console.log(html);
@@ -178,7 +157,7 @@ $(function () {
                   $('#result-message').addClass('alert alert-success').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Success!</strong> Message Send. We will contact with you soon.').delay(500).slideDown(500).delay(10000).slideUp('slow');
 
                   $btn.button('reset');
-                  
+
               } else {
                   $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Message Sending Error! Please try again').delay(500).slideDown(500).delay(10000).slideUp('slow');
                   $btn.button('reset');

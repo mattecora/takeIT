@@ -78,8 +78,41 @@
     </div>
   </section>
 
-  <section>
+  <!-- Content -->
+  <section style="padding-top: 50px;">
+    <div class="container">
+      <div class="row">
+        <!-- Search button -->
+        <div class="col-md-4">
+          <a href="search.php">
+            <div class="st-feature">
+              <div class="st-feature-icon"><i class="fa fa-search"></i></div>
+              <strong class="st-feature-title">Search</strong>
+            </div>
+          </a>
+        </div>
 
+        <!-- Add button -->
+        <div class="col-md-4">
+          <a href="add.php">
+            <div class="st-feature">
+              <div class="st-feature-icon"><i class="fa fa-pencil"></i></div>
+              <strong class="st-feature-title">Add</strong>
+            </div>
+          </a>
+        </div>
+
+        <!-- Profile button -->
+        <div class="col-md-4">
+          <a href="profile.php">
+            <div class="st-feature">
+              <div class="st-feature-icon"><i class="fa fa-user"></i></div>
+              <strong class="st-feature-title">Profile</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

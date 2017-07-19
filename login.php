@@ -51,6 +51,7 @@
             <li><a href="./#team">The Team</a></li>
             <li><a href="./#contact">Contact Us</a></li>
             <li><a href="./#subscribe">Subscribe</a></li>
+            <li><a href="./#faq">FAQ</a></li>
             <li class="active"><a href="login.php">Login</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -58,32 +59,23 @@
     </nav>
   </header>
 
-  <section class="home" id="home" data-stellar-background-ratio="0.4">
+  <section class="home" id="home" data-stellar-background-ratio="0.4" style="height: 100%;">
     <div class="container">
-      <div class="row">
+      <div class="row" style="text-align: center">
         <div class="col-md-12">
             <div class="hero-txt">
               <h2 class="hero-title">Sign up for free</h2>
             </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section style="padding-top: 50px;">
-    <div class="container">
-      <div class="row">
+      <div class="row" style="text-align: center">
         <!-- Login form -->
         <div class="col-md-4 col-md-offset-4">
-          <div class="form" style="text-align: center;">
-            <h3 style="margin-bottom: 30px;">Login</h3>
-            <form method="post" action="app/index.php" id="login_form">
-              <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
-              <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
-              <p class="center"><button type="submit" class="btn btn-primary">Login</button></p>
-            </form>
-          </div>
-        </div>
+          <form method="post" action="app/index.php" id="login_form">
+            <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
+            <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
+            <p class="center"><button type="submit" class="btn btn-primary">Login</button></p>
+          </form>
         </div>
       </div>
     </div>

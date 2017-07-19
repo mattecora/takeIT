@@ -9,8 +9,14 @@
   }
 }
 
+html, body {
+  height: 100%;
+}
+
 .home {
   background-image: url(../photos/bg-home-overlay.jpg);
+  display: flex;
+  align-items: center;
 }
 
 .st-member {
@@ -19,8 +25,9 @@
 
 .st-member .img_about_inside {
   border-radius: 100%;
-  height: 90%;
-  width: 90%;
+  height: 80%;
+  width: 80%;
+  padding: 10px;
 }
 
 .section-title:before {
