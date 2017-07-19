@@ -68,7 +68,7 @@
                 <form class="form" method="get" action="search.php" id="company_form">
                   <div class="form-inline" style="text-align: center;">
                     <input name="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company" style="min-width: 60%;">
-                    <button type="submit" class="btn btn-primary">Search company</button>
+                    <button type="submit" class="btn btn-primary" id="btn-search-company">Search company</button>
                   </div>
                 </form>
               </div>
@@ -90,7 +90,7 @@
           else echo "all";
         ?>
       </h1>
-      <table class="table table-striped">
+      <table class="table data-table">
         <!-- Header -->
         <thead>
           <tr>

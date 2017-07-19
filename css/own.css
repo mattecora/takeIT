@@ -81,3 +81,29 @@ html, body {
 .center {
   text-align: center;
 }
+
+.testimonial {
+  color: #000;
+}
+
+.testimonial blockquote footer {
+  color: #000;
+}
+
+.data-table {
+  margin-top : 30px;
+}
+
+.data-table thead tr {
+  color : #337ab7;
+}
+
+.data-table thead tr > th {
+  color : #337ab7;
+  border-bottom : 3px solid #337ab7;
+}
+
+#btn-search-company {
+  border-radius: 0px;
+  height: 52px; /* TODO: fixme */
+}

@@ -55,6 +55,8 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li class="active"><a href="#home">Home</a></li>
 							<li><a href="#about">About</a></li>
+							<li><a href="#team">The Team</a></li>
+							<li><a href="#contact">Contact Us</a></li>
 							<li><a href="#subscribe">Subscribe</a></li>
 							<li><a href="#faq">FAQ</a></li>
 							<li><a href="login.php">Login</a></li>
@@ -70,16 +72,16 @@
 					<div class="col-md-12">
 						<div class="st-home-unit">
 							<div class="hero-txt">
-								<p class="hero-work" style="font-size: 20px;">Experiences - Mentors - Young Talents</p>
+								<p class="hero-work">Experiences - Mentors - Young Talents</p>
 								<h2 class="hero-title">Your ticket for success</h2>
-								<a href="#subscribe"><button class="btn btn-main btn-lg">Get Started</button></a>
+								<a href="#about"><button class="btn btn-main btn-lg">Get Started</button></a>
 							</div>
 
 						</div>
 					</div>
 				</div>
 			</div>
-			<a href="#about"><div class="mouse-icon"><div class="wheel"></div></div></a>
+			<div class="mouse-icon"><div class="wheel"></div></div>
 		</section>
 
 		<section class="service" id="about">
@@ -93,23 +95,23 @@
 						<div class="row">
 							<div class="col-md-4">
 								<div class="st-feature">
-									<div class="st-feature-icon"><i class="fa fa-graduation-cap"></i></div>
-									<strong class="st-feature-title">Learning and opportunities</strong>
-									<p>Get access to professional experiences, industry updates, trends, and have the opportunity to participate in extraordinary career days with our partner companies.</p>
+									<div class="st-feature-icon"><i class="fa fa-cog"></i></div>
+									<strong class="st-feature-title">Option Panel</strong>
+									<p>Pro adiuvet, honesto foris liberiusque statuat theseo scribimus mererer percurri geometria.</p>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="st-feature">
 									<div class="st-feature-icon"><i class="fa fa-university"></i></div>
-									<strong class="st-feature-title">Customized mentoring program</strong>
-									<p>A tailor-made, customized mentoring program suiting your needs, your skills and your industry of interest. The mentoring sessions will be held by call, Skype or face-to-face conversation.</p>
+									<strong class="st-feature-title">Option Panel</strong>
+									<p>Pro adiuvet, honesto foris liberiusque statuat theseo scribimus mererer percurri geometria.</p>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="st-feature">
-									<div class="st-feature-icon"><i class="fa fa-users"></i></div>
-									<strong class="st-feature-title">Enlarge your network</strong>
-									<p>Interact with students, professionals, mentors from different industry sectors, exchange opinions and ideas, to leverage your industry prospects, making new connections and friends.</p>
+									<div class="st-feature-icon"><i class="fa fa-comments-o"></i></div>
+									<strong class="st-feature-title">Option Panel</strong>
+									<p>Pro adiuvet, honesto foris liberiusque statuat theseo scribimus mererer percurri geometria.</p>
 								</div>
 							</div>
 						</div>
@@ -146,7 +148,76 @@
 			</div>
 		</section>
 
-		<section class="testimonials" style="background-color: #fff; color: #000;">
+		<section class="about" id="team">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title st-center">
+							<h3>Meet our team</h3>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="st-member">
+									<div class="st-member-img">
+										<img src="photos/andrea.jpg" alt="" class="img-responsive img_about_inside">
+									</div>
+									<div class="st-member-info">
+										<strong class="st-member-name">Andrea Cossio</strong>
+										<p class="st-member-pos">Software Developer</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="st-member">
+									<div class="st-member-img">
+										<img src="photos/matteo.jpg" alt="" class="img-responsive img_about_inside">
+									</div>
+									<div class="st-member-info">
+										<strong class="st-member-name">Matteo Corain</strong>
+										<p class="st-member-pos">Software Developer</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="st-member">
+									<div class="st-member-img">
+										<img src="photos/valerio.jpg" alt="" class="img-responsive img_about_inside">
+									</div>
+									<div class="st-member-info">
+										<strong class="st-member-name">Valerio Pidria</strong>
+										<p class="st-member-pos">CFO</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-md-offset-2" style="margin-top: 50px; margin-bottom: 50px;">
+								<div class="st-member">
+									<div class="st-member-img">
+										<img src="photos/valentina.jpg" alt="" class="img-responsive img_about_inside">
+									</div>
+									<div class="st-member-info">
+										<strong class="st-member-name">Valentina Tamborrino</strong>
+										<p class="st-member-pos">Designer</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4" style="margin-top: 50px; margin-bottom: 50px;">
+								<div class="st-member">
+									<div class="st-member-img">
+										<img src="photos/naresh.jpg" alt="" class="img-responsive img_about_inside">
+									</div>
+									<div class="st-member-info">
+										<strong class="st-member-name">Naresh Rao</strong>
+										<p class="st-member-pos">Operations</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="testimonials">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -170,7 +241,7 @@
 										</div>
 										<blockquote>
 											<p>Contrariis labore vetuit scaevola, contra percurri adamare efficeret quibus. Nostram consulatu mediocritatem maiorem, cyrenaicisque, quandam accedit veniat cognitioque, animadvertat accusantibus temporibus maximeque litterae.</p>
-											<footer style="color: #000;">Nancy Ford, <cite title="Source Title">Example Inc.</cite></footer>
+											<footer>Nancy Ford, <cite title="Source Title">Example Inc.</cite></footer>
 										</blockquote>
 									</div>
 								</li>
@@ -192,11 +263,39 @@
 			</div>
 		</section>
 
+		<section class="contact" id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title st-center">
+							<h3>Contact Us</h3>
+							<p>Get in Touch with Us</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<form class="contact-form" role="form">
+							<input type="text" class="form-control" id="fname" name="fname" placeholder="Your Full Name">
+							<input type="email" class="form-control" id="email" name="email" placeholder="Your E-mail">
+							<input type="text" class="form-control" id="subj" name="subj" placeholder="Your Subject">
+							<textarea id="mssg" name="mssg" placeholder="Your Message" class="form-control" rows="10"></textarea>
+							<button class="btn btn-main btn-lg" type="submit" id="send" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Sending..."><i class="fa fa-paper-plane "></i> Send</button>
+						</form>
+						<div id="result-message" role="alert"></div>
+					</div>
+					<div class="col-md-6">
+						<p>If you have any question about the project or you are interested in it, just fill the form and you will be contacted back as soon as possible.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section id="subscribe" class="subscribe">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="subscribe-title">Subscribe to our Newsletter</h3>
+						<h3 class="subscribe-title">Subscribe Newsletter</h3>
 						<form method="post" action="./" role="form" class="subscribe-form">
 							<div class="input-group">
 								<input type="email" class="form-control" name="mc-email" placeholder="Enter E-mail...">
