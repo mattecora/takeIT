@@ -90,47 +90,45 @@
           else echo "all";
         ?>
       </h1>
-      <table class="table data-table">
-        <!-- Header -->
-        <thead>
-          <tr>
-            <th>Number</th>
-            <th>Company</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Date</th>
-            <th>Position</th>
-          </tr>
-        </thead>
 
-        <!-- Content -->
-        <tbody>
-          <?php
-            $db = db_connect();
+      <div class="row">
+        <?php
+          $db = db_connect();
+          $db2 = db_connect();
 
-            if (empty($_GET["company"])) {
-              $query = $db->query("SELECT * FROM experience");
-            } else {
-              $query = $db->query("SELECT * FROM experience WHERE Company = '$_GET[company]'");
-            }
+          if (empty($_GET["company"])) {
+            $query = $db->query("SELECT * FROM experience");
+          } else {
+            $query = $db->query("SELECT * FROM experience WHERE Company = '$_GET[company]'");
+          }
 
-            while ($row = $query->fetch_assoc()) {
-              echo "<tr>
-                <td><a href=\"view.php?id=$row[Id]\">$row[Id]</a></td>
-                <td>$row[Company]</td>
-                <td>$row[Title]</td>
-                <td>$row[User]</td>
-                <td>$row[Date]</td>
-                <td>$row[Position]</td>
-              </tr>";
-            }
+          while ($row = $query->fetch_assoc()) {
+            $votes = count_votes($db2, $row["Id"]);
+            echo "<div class=\"col-md-4 src-tab\">
+              <div class=\"src-tab-head\">
+                <div class=\"src-tab-title\"><a href=\"view.php?id=$row[Id]\"><h3>$row[Title]</h3></a></div>
+                <div class=\"src-tab-title\"><h3><i class=\"fa fa-thumbs-up\"></i> $votes</h3></div>
+              </div>
+              <hr>
+              <table style=\"border: none; text-align: center; width: 100%;\">
+                <tr>
+                  <td><i class=\"fa fa-calendar\"></i><p class=\"center\"> $row[User]</td>
+                  <td><i class=\"fa fa-user\"></i><p class=\"center\"> $row[Date]</td>
+                </tr>
+                <tr>
+                  <td><i class=\"fa fa-building\"></i><p class=\"center\"> $row[Company]</td>
+                  <td><i class=\"fa fa-briefcase\"></i><p class=\"center\"> $row[Position]</td>
+                </tr>
+              </table>
+            </div>";
+          }
 
-            $db->close();
-          ?>
-        </tbody>
-      </table>
+          $db->close();
+          $db2->close();
+        ?>
+      </div>
     </div>
-    </section>
+  </section>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery.min.js"></script>

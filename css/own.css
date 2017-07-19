@@ -90,20 +90,24 @@ html, body {
   color: #000;
 }
 
-.data-table {
-  margin-top : 30px;
+.src-tab {
+  padding: 30px;
 }
 
-.data-table thead tr {
-  color : #337ab7;
+.src-tab-head {
+  display: flex;
+  justify-content: space-between;
 }
 
-.data-table thead tr > th {
-  color : #337ab7;
-  border-bottom : 3px solid #337ab7;
+.src-tab-head h3:hover {
+  color: #337ab7;
 }
 
-#btn-search-company {
-  border-radius: 0px;
-  height: 52px; /* TODO: fixme */
+.src-tab-title {
+  float: left;
+}
+
+.src-tab-votes {
+  float: right;
+  text-align: right;
 }
