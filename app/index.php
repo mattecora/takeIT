@@ -58,7 +58,7 @@
             <li><a href="./search.php">Search</a></li>
             <li><a href="./add.php">Add</a></li>
             <li><a href="./profile.php">Profile</a></li>
-            <p class="navbar-text">Signed in as <?php echo($_SESSION["user"]); ?></p>
+            <li><a>Signed in as <?php echo($_SESSION["user"]); ?></a></li>
             <li><a href="../index.html">Get out</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -71,7 +71,7 @@
       <div class="row">
         <div class="col-md-12">
             <div class="hero-txt">
-              <h2 class="hero-title">Sign up for free</h2>
+              <h2 class="hero-title">What do you want to do?</h2>
             </div>
         </div>
       </div>
@@ -79,40 +79,41 @@
   </section>
 
   <!-- Content -->
-  <div class="container">
-    <h1>What do you want to do?</h1>
-    <div class="row">
-      <div class="col-md-4 animated fadeInUp">
+  <section style="padding-top: 50px;">
+    <div class="container">
+      <div class="row">
         <!-- Search button -->
-        <a href="search.php">
-          <button class="btn btn-default bigbtn">
-            <div class="glyph-cont"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
-            <h3>Search</h3>
-          </button>
-        </a>
-      </div>
+        <div class="col-md-4">
+          <a href="search.php">
+            <div class="st-feature">
+              <div class="st-feature-icon"><i class="fa fa-search"></i></div>
+              <strong class="st-feature-title">Search</strong>
+            </div>
+          </a>
+        </div>
 
-      <div class="col-md-4 animated fadeInUp">
         <!-- Add button -->
-        <a href="add.php">
-          <button class="btn btn-default bigbtn">
-            <div class="glyph-cont"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></div>
-            <h3>Add</h3>
-          </button>
-        </a>
-      </div>
+        <div class="col-md-4">
+          <a href="add.php">
+            <div class="st-feature">
+              <div class="st-feature-icon"><i class="fa fa-pencil"></i></div>
+              <strong class="st-feature-title">Add</strong>
+            </div>
+          </a>
+        </div>
 
-      <div class="col-md-4 animated fadeInUp">
         <!-- Profile button -->
-        <a href="profile.php">
-          <button class="btn btn-default bigbtn">
-            <div class="glyph-cont"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
-            <h3>Profile</h3>
-          </button>
-        </a>
+        <div class="col-md-4">
+          <a href="profile.php">
+            <div class="st-feature">
+              <div class="st-feature-icon"><i class="fa fa-user"></i></div>
+              <strong class="st-feature-title">Profile</strong>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery.min.js"></script>
