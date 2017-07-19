@@ -231,7 +231,7 @@
 								<li>
 									<div class="testimonial">
 										<div class="testimonial-img">
-											<img src="photos/client2.jpg" alt="">
+											<img src="photos/client.jpg" alt="">
 										</div>
 										<blockquote>
 											<p>Contrariis labore vetuit scaevola, contra percurri adamare efficeret quibus. Nostram consulatu mediocritatem maiorem, cyrenaicisque, quandam accedit veniat cognitioque, animadvertat accusantibus temporibus maximeque litterae.</p>
@@ -242,7 +242,7 @@
 								<li>
 									<div class="testimonial">
 										<div class="testimonial-img">
-											<img src="photos/client3.jpg" alt="">
+											<img src="photos/client.jpg" alt="">
 										</div>
 										<blockquote>
 											<p>Illas, volumus prosperum. Nostras eoque statua cuius corrumpit praetor aliter quaeso propter ei, quam inducitur ruant doctiores sanguinem atomum molestiae, antiqua inculta dicent.</p>
@@ -307,9 +307,7 @@
 						<div class="subscribe-result"></div>
 						<p class="subscribe-or">or</p>
 						<ul class="subscribe-social">
-							<li><a href="#" class="social twitter"><i class="fa fa-twitter"></i> Follow</a></li>
-							<li><a href="#" class="social facebook"><i class="fa fa-facebook"></i> Like</a></li>
-							<li><a href="#" class="social rss"><i class="fa fa-rss"></i> RSS</a></li>
+							<li><a href="https://www.facebook.com/TakeItofficial" class="social facebook"><i class="fa fa-facebook"></i> Like us</a></li>
 						</ul>
 					</div>
 				</div>
@@ -354,7 +352,7 @@
 
     <footer class="footer-distributed">
 			<div class="footer-left">
-				<img src="photos/logo_white.png" alt="" style="width: 100px">
+				<img src="photos/logo_white.png" alt="takeIT!" style="width: 100px;">
 
 				<div class="footer-links">
           <ul>
@@ -372,34 +370,21 @@
 			</div>
 
 			<div class="footer-center">
+        <div>
+          <i class="fa fa-facebook"></i>
+          <p><a href="https://www.facebook.com/TakeItofficial">Like us on Facebook</a></p>
+        </div>
 				<div>
-					<i class="fa fa-map-marker"></i>
-					<p><span>21 Revolution Street</span> Paris, France</p>
-				</div>
-
-				<div>
-					<i class="fa fa-phone"></i>
-					<p>+1 555 123456</p>
-				</div>
-
-				<div>
-					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:eiatakeit@gmail.com">eiatakeit@gmail.com</a></p>
+          <i class="fa fa-envelope"></i>
+					<p><a href="mailto:eiatakeit@gmail.com">Send us an email</a></p>
 				</div>
 			</div>
 
 			<div class="footer-right">
 				<p class="footer-company-about">
-					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+					<span>This idea has been developed during European Innovation Academy (Turin, July 9th-28th 2017)</span>
+          <img src="photos/eia_logo.png" alt="EIA" style="width: 100%">
 				</p>
-
-				<div class="footer-icons">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
-				</div>
 			</div>
 		</footer>
 

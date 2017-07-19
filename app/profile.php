@@ -78,7 +78,7 @@
       <div class="row">
         <div class="col-md-12">
             <div class="hero-txt">
-              <h2 class="hero-title">Welcome <?php echo($_SESSION["user"]); ?></h2>
+              <h2 class="hero-title">Profile info</h2>
             </div>
         </div>
       </div>
@@ -87,8 +87,7 @@
 
   <!-- Content -->
   <div class="container">
-    <h1>Your profile</h1>
-    <div class="row animated fadeInUp">
+    <div class="row">
       <!-- Login data -->
       <div class="col-md-4">
         <div class="form">

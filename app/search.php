@@ -62,19 +62,15 @@
       <div class="row">
         <div class="col-md-12">
             <div class="hero-txt">
-              <h2 class="hero-title">Welcome <?php echo($_SESSION["user"]); ?></h2>
+              <h2 class="hero-title">Search an experience</h2>
             </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="container">
-    <h1>Search an experience</h1>
-  </div>
-
   <!-- Content -->
-  <div class="container animated fadeInUp">
+  <div class="container">
     <!-- Search form -->
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
