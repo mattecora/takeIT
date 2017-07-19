@@ -19,6 +19,7 @@
 		<link href="css/owl.theme.css" rel="stylesheet">
 		<link href="css/owl.transitions.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
 		<link href="css/own.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -351,7 +352,56 @@
 			</div>
 		</section>
 
+    <footer class="footer-distributed">
+			<div class="footer-left">
+				<img src="photos/logo_white.png" alt="" style="width: 100px">
 
+				<div class="footer-links">
+          <ul>
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#team">The Team</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#subscribe">Subscribe</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="login.php">Login</a></li>
+          </ul>
+				</div>
+
+				<p class="footer-company-name">takeIT! &copy; 2017</p>
+			</div>
+
+			<div class="footer-center">
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>21 Revolution Street</span> Paris, France</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+1 555 123456</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:eiatakeit@gmail.com">eiatakeit@gmail.com</a></p>
+				</div>
+			</div>
+
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About the company</span>
+					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+				</p>
+
+				<div class="footer-icons">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</footer>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="js/jquery.min.js"></script>

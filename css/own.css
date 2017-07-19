@@ -49,3 +49,12 @@ html, body {
   background-image: none;
   background-color: #455a64;
 }
+
+.footer-links ul {
+  padding: 0px;
+  list-style-type: none;
+}
+
+.footer-links ul li {
+  display: inline-block;
+}
