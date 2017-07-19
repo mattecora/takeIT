@@ -61,25 +61,25 @@
 
   <section class="home" id="home" data-stellar-background-ratio="0.4" style="height: 100%;">
     <div class="container">
-      <div class="row" style="text-align: center">
-        <div class="col-md-12">
-            <div class="hero-txt">
-              <h2 class="hero-title">Sign up for free</h2>
-            </div>
-        </div>
-      </div>
-      <div class="row" style="text-align: center">
-        <!-- Login form -->
+      <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <form method="post" action="app/index.php" id="login_form">
-            <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
-            <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
-            <p class="center"><button type="submit" class="btn btn-primary">Login</button></p>
-          </form>
+          <div class="st-home-unit">
+            <div class="hero-txt">
+              <h2 class="hero-title">LOGIN</h2>
+              <form method="post" action="app/index.php" id="login_form">
+                <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
+                <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
+                <p class="center"><button type="submit" class="btn btn-primary">Login</button></p>
+              </form>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="js/jquery.min.js"></script>
