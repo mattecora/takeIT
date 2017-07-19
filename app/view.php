@@ -105,16 +105,21 @@
         </div>
       </div>
       <div class="row row-info-exp">
-        <div class="col-md-3">
-          <i class="fa fa-user"></i> <?php echo $info["User"]; ?>
+        <div class="col-md-4">
+          <i class="fa fa-calendar"></i> <?php echo $info["Date"]; ?>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <i class="fa fa-building"></i> <?php echo $info["Company"]; ?>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <i class="fa fa-briefcase"></i> <?php echo $info["Position"]; ?>
         </div>
-        <div class="col-md-3">
+      </div>
+      <div class="row row-info-exp" style="padding-top: 20px;">
+        <div class="col-md-4 col-md-offset-1">
+          <i class="fa fa-user"></i> <?php echo $info["User"]; ?>
+        </div>
+        <div class="col-md-4 col-md-offset-2">
           <i class="fa fa-thumbs-up"></i> <?php echo $info["Votes"]; ?>
         </div>
       </div>

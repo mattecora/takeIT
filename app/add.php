@@ -2,7 +2,7 @@
   include("functions.php");
   check_logged();
 
-  if (!empty($_POST["company"]) && !empty($_POST["title"]) && !empty($_POST["date"]) && !empty($_POST["position"]) && !empty($_POST["description"])) {
+  if (!empty($_POST["company"]) && !empty($_POST["date"]) && !empty($_POST["title"]) && !empty($_POST["position"]) && !empty($_POST["description"])) {
     $db = db_connect();
     $query = $db->query("INSERT INTO experience(Company, Date, User, Position, Title, Description) VALUES
       ('$_POST[company]', '$_POST[date]', '$_SESSION[user]', '$_POST[position]', '$_POST[title]', '$_POST[description]')");
@@ -64,46 +64,62 @@
     </nav>
   </header>
 
-  <section class="home" id="home" data-stellar-background-ratio="0.4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-            <div class="hero-txt">
-              <h2 class="hero-title">Add an experience</h2>
-            </div>
+  <form method="post" action="add.php" id="exp_info_form">
+    <section class="home" id="home" data-stellar-background-ratio="0.4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              <div class="hero-txt">
+                <h2 class="hero-title">Add your experience</h2>
+              </div>
+          </div>
+        </div>
+
+        <!-- Info inputs -->
+        <div class="row row-info-exp">
+          <div class="col-md-6 col-md-offset-3 form-inline">
+            <i class="fa fa-pencil"></i>
+            <input name="title" type="text" class="form-control" style="width: 75%" placeholder="Title of your experience" aria-describedby="Insert the title">
+          </div>
+        </div>
+        <div class="row row-info-exp" style="padding-top: 20px;">
+          <div class="col-md-4 form-inline">
+            <i class="fa fa-building"></i>
+            <input name="company" type="text" class="form-control" style="width: 75%" placeholder="Company" aria-describedby="Insert the company">
+          </div>
+          <div class="col-md-4 form-inline">
+            <i class="fa fa-briefcase"></i>
+            <input name="position" type="text" class="form-control" style="width: 75%" placeholder="Position" aria-describedby="Insert the position">
+          </div>
+          <div class="col-md-4 form-inline">
+            <i class="fa fa-calendar"></i>
+            <input name="date" type="text" class="form-control" style="width: 75%" placeholder="Date" aria-describedby="Insert the date">
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Content -->
-  <div class="container">
-    <!-- Experience info form -->
-    <form method="post" action="add.php" id="exp_info_form">
-      <?php
-        if (isset($query) && $query == true)
-          draw_msg_ok("Your experience has been added successfully!");
-        else if (isset($query) && $query == false)
-          draw_msg_err("There was an error in adding your experience!");
-      ?>
+    <!-- Content -->
+    <section class="content">
+      <div class="container">
+        <?php
+          if (isset($query) && $query == true)
+            draw_msg_ok("Your experience has been added successfully!");
+          else if (isset($query) && $query == false)
+            draw_msg_err("There was an error in adding your experience!");
+        ?>
 
-      <!-- General info -->
-      <div class="row">
-        <div class="col-md-3"><h4>Company</h4><input name="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company"></div>
-        <div class="col-md-3"><h4>Title</h4><input name="title" type="text" class="form-control" placeholder="Title" aria-describedby="Insert the title"></div>
-        <div class="col-md-3"><h4>Date</h4><input name="date" type="text" class="form-control" placeholder="Date" aria-describedby="Insert the date"></div>
-        <div class="col-md-3"><h4>Position</h4><input name="position" type="text" class="form-control" placeholder="Position" aria-describedby="Insert the position"></div>
-      </div>
-
-      <!-- Textarea form -->
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <p class="center"><textarea name="description" class="form-control" rows="10" placeholder="Describe your experience here"></textarea></p>
-          <p class="center"><button type="submit" class="btn btn-primary">Add experience</button></p>
+        <!-- Textarea -->
+        <h1 class="center">What was your experience like?</h1>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <p class="center"><textarea name="description" class="form-control" rows="10" placeholder="Describe your experience here"></textarea></p>
+            <p class="center"><button type="submit" class="btn btn-primary">Add experience</button></p>
+          </div>
         </div>
       </div>
-    </form>
-  </div>
+    </section>
+  </form>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery.min.js"></script>
