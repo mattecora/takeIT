@@ -60,7 +60,7 @@
 			</nav>
 		</header>
 
-		<section class="home" id="home" data-stellar-background-ratio="0.4" style="height: 100%;">
+		<section class="home bighome" id="home" data-stellar-background-ratio="0.4">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">

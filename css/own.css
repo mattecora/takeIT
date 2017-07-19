@@ -19,6 +19,14 @@ html, body {
   align-items: center;
 }
 
+.bighome {
+  min-height: 100%;
+}
+
+.midhome {
+  min-height: 60%;
+}
+
 .st-member {
   text-align: center;
 }

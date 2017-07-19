@@ -65,7 +65,7 @@
   </header>
 
   <form method="post" action="add.php" id="exp_info_form">
-    <section class="home" id="home" data-stellar-background-ratio="0.4">
+    <section class="home midhome" id="home" data-stellar-background-ratio="0.4">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
