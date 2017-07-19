@@ -79,21 +79,21 @@
         <div class="row row-info-exp">
           <div class="col-md-6 col-md-offset-3 form-inline">
             <i class="fa fa-pencil"></i>
-            <input name="title" type="text" class="form-control" style="width: 75%" placeholder="Title of your experience" aria-describedby="Insert the title">
+            <input name="title" type="text" class="form-control" style="min-width: 75%" placeholder="Title of your experience" aria-describedby="Insert the title">
           </div>
         </div>
-        <div class="row row-info-exp" style="padding-top: 20px;">
+        <div class="row row-info-exp" style="padding-top: 30px;">
           <div class="col-md-4 form-inline">
             <i class="fa fa-building"></i>
-            <input name="company" type="text" class="form-control" style="width: 75%" placeholder="Company" aria-describedby="Insert the company">
+            <input name="company" type="text" class="form-control" style="min-width: 75%" placeholder="Company" aria-describedby="Insert the company">
           </div>
           <div class="col-md-4 form-inline">
             <i class="fa fa-briefcase"></i>
-            <input name="position" type="text" class="form-control" style="width: 75%" placeholder="Position" aria-describedby="Insert the position">
+            <input name="position" type="text" class="form-control" style="min-width: 75%" placeholder="Position" aria-describedby="Insert the position">
           </div>
           <div class="col-md-4 form-inline">
             <i class="fa fa-calendar"></i>
-            <input name="date" type="text" class="form-control" style="width: 75%" placeholder="Date" aria-describedby="Insert the date">
+            <input name="date" type="text" class="form-control" style="min-width: 75%" placeholder="Date" aria-describedby="Insert the date">
           </div>
         </div>
       </div>
