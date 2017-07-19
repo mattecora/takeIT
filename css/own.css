@@ -59,3 +59,17 @@ html, body {
 .footer-links ul li {
   display: inline-block;
 }
+
+.content {
+  padding-top: 50px;
+}
+
+.row-info-exp {
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+}
+
+.center {
+  text-align: center;
+}

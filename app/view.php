@@ -104,6 +104,20 @@
             </div>
         </div>
       </div>
+      <div class="row row-info-exp">
+        <div class="col-md-3">
+          <i class="fa fa-user"></i> <?php echo $info["User"]; ?>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-building"></i> <?php echo $info["Company"]; ?>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-briefcase"></i> <?php echo $info["Position"]; ?>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-thumbs-up"></i> <?php echo $info["Votes"]; ?>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -117,74 +131,43 @@
   </div>
 
   <!-- Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h3>Author</h3>
-        <p class="center"><?php echo $info["User"]; ?></p>
-      </div>
-      <div class="col-md-4">
-        <h3>Title</h3>
-        <p class="center"><?php echo $info["Title"]; ?></p>
-      </div>
-      <div class="col-md-4">
-        <h3>Votes</h3>
-        <p class="center"><?php echo $info["Votes"]; ?></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <h3>Date</h3>
-        <p class="center"><?php echo $info["Date"]; ?></p>
-      </div>
-      <div class="col-md-3">
-        <h3>Position</h3>
-        <p class="center"><?php echo $info["Position"]; ?></p>
-      </div>
-      <div class="col-md-3">
-        <h3>Company</h3>
-        <p class="center"><?php echo $info["Company"]; ?></p>
-      </div>
-      <div class="col-md-3">
-        <h3>Purchases</h3>
-        <p class="center"><?php echo $info["Purchases"]; ?></p>
-      </div>
-    </div>
+  <section class="content">
+    <div class="container">
+      <?php
+        /* Purchase button */
+        if ($purch) {
+          echo "<p>" . $info["Description"] . "</p>";
+          echo "<p class=\"center\">
+            <a href=\"mailto:$mail\">
+            <button type=\"button\" class=\"btn btn-primary\">
+              <span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span> Get in touch with this person
+            </button></a></p>";
+        } else {
+          echo "<form method=\"post\">
+          <p class=\"center\">You haven't purchased this experience yet.</p>
+          <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">
+            <span style=\"font-size: 100%;\" class=\"glyphicon glyphicon-euro\"></span> Purchase now!
+          </button></p>
+          <input type=\"hidden\" name=\"frmname\" value=\"purchase\"/>
+          </form>";
+        }
 
-    <?php
-      /* Purchase button */
-      if ($purch) {
-        echo "<p>" . $info["Description"] . "</p>";
-        echo "<p class=\"center\">
-          <a href=\"mailto:$mail\">
-          <button type=\"button\" class=\"btn btn-primary\">
-            <span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span> Get in touch with this person
-          </button></a></p>";
-      } else {
-        echo "<form method=\"post\">
-        <p class=\"center\">You haven't purchased this experience yet.</p>
-        <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">
-          <span style=\"font-size: 100%;\" class=\"glyphicon glyphicon-euro\"></span> Purchase now!
-        </button></p>
-        <input type=\"hidden\" name=\"frmname\" value=\"purchase\"/>
-        </form>";
-      }
-
-      /* Vote button */
-      if ($can_vote) {
-        echo "<form method=\"post\">
-        <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">
-          <span style=\"font-size: 100%;\" class=\"glyphicon glyphicon-thumbs-up\"></span> Vote this experience!
-        </button></p>
-        <input type=\"hidden\" name=\"frmname\" value=\"vote\"/>
-        </form>";
-      }
-    ?>
+        /* Vote button */
+        if ($can_vote) {
+          echo "<form method=\"post\">
+          <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">
+            <span style=\"font-size: 100%;\" class=\"glyphicon glyphicon-thumbs-up\"></span> Vote this experience!
+          </button></p>
+          <input type=\"hidden\" name=\"frmname\" value=\"vote\"/>
+          </form>";
+        }
+      ?>
 
       <p class="center"><a href="search.php"><button class="btn btn-primary">
         <span style="font-size: 100%" class="glyphicon glyphicon-arrow-left"></span> Go back
       </button></a></p>
-  </div>
+    </div>
+  </section>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery.min.js"></script>

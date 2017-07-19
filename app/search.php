@@ -63,6 +63,15 @@
         <div class="col-md-12">
             <div class="hero-txt">
               <h2 class="hero-title">Search an experience</h2>
+              <!-- Search form -->
+              <div class="col-md-6 col-md-offset-3">
+                <form class="form" method="get" action="search.php" id="company_form">
+                  <div class="form-inline" style="text-align: center;">
+                    <input name="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company" style="width: 50%;">
+                    <button type="submit" class="btn btn-primary">Search company</button>
+                  </div>
+                </form>
+              </div>
             </div>
         </div>
       </div>
@@ -70,58 +79,58 @@
   </section>
 
   <!-- Content -->
-  <div class="container">
-    <!-- Search form -->
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <form class="form" method="get" action="search.php" id="company_form">
-          <p class="center"><input name="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company"></p>
-          <p class="center"><button type="submit" class="btn btn-primary">Search company</button></p>
-        </form>
-      </div>
-    </div>
-
-    <!-- Results -->
-    <table class="table table-striped">
-      <!-- Header -->
-      <thead>
-        <tr>
-          <th>Number</th>
-          <th>Company</th>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Date</th>
-          <th>Position</th>
-        </tr>
-      </thead>
-
-      <!-- Content -->
-      <tbody>
+  <section class="content">
+    <div class="container">
+      <!-- Results -->
+      <h1 style="text-align: center;">
+        Results for
         <?php
-          $db = db_connect();
-
-          if (empty($_GET["company"])) {
-            $query = $db->query("SELECT * FROM experience");
-          } else {
-            $query = $db->query("SELECT * FROM experience WHERE Company = '$_GET[company]'");
-          }
-
-          while ($row = $query->fetch_assoc()) {
-            echo "<tr>
-              <td><a href=\"view.php?id=$row[Id]\">$row[Id]</a></td>
-              <td>$row[Company]</td>
-              <td>$row[Title]</td>
-              <td>$row[User]</td>
-              <td>$row[Date]</td>
-              <td>$row[Position]</td>
-            </tr>";
-          }
-
-          $db->close();
+          if (isset($_GET["company"]))
+            echo $_GET["company"];
+          else echo "all";
         ?>
-      </tbody>
-    </table>
-  </div>
+      </h1>
+      <table class="table table-striped">
+        <!-- Header -->
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+
+        <!-- Content -->
+        <tbody>
+          <?php
+            $db = db_connect();
+
+            if (empty($_GET["company"])) {
+              $query = $db->query("SELECT * FROM experience");
+            } else {
+              $query = $db->query("SELECT * FROM experience WHERE Company = '$_GET[company]'");
+            }
+
+            while ($row = $query->fetch_assoc()) {
+              echo "<tr>
+                <td><a href=\"view.php?id=$row[Id]\">$row[Id]</a></td>
+                <td>$row[Company]</td>
+                <td>$row[Title]</td>
+                <td>$row[User]</td>
+                <td>$row[Date]</td>
+                <td>$row[Position]</td>
+              </tr>";
+            }
+
+            $db->close();
+          ?>
+        </tbody>
+      </table>
+    </div>
+    </section>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery.min.js"></script>

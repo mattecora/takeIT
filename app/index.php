@@ -79,7 +79,7 @@
   </section>
 
   <!-- Content -->
-  <section style="padding-top: 50px;">
+  <section class="content">
     <div class="container">
       <div class="row">
         <!-- Search button -->
