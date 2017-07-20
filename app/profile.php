@@ -106,7 +106,7 @@
               else {
                 echo "<ul>";
                 foreach ($contributions as $id)
-                  echo "<li><a href=\"#\">Experience #$id</a></li>";
+                  echo "<li><a href=\"view.php?id=$id\">Experience #$id</a></li>";
                 echo "</ul>";
               }
             ?>

@@ -104,22 +104,27 @@
 
           while ($row = $query->fetch_assoc()) {
             $votes = count_votes($db2, $row["Id"]);
-            echo "<div class=\"col-md-4 src-tab\">
-              <div class=\"src-tab-head\">
-                <div class=\"src-tab-title\"><a href=\"view.php?id=$row[Id]\"><h3>$row[Title]</h3></a></div>
-                <div class=\"src-tab-title\"><h3><i class=\"fa fa-thumbs-up\"></i> $votes</h3></div>
+            echo "<div class=\"col-md-12 src-tab\">
+              <div class=\"src-tab-left\">
+                <img src=\"../photos/profile.png\" style=\"width: 100%;\">
               </div>
-              <hr>
-              <table style=\"border: none; text-align: center; width: 100%;\">
-                <tr>
-                  <td><i class=\"fa fa-calendar\"></i><p class=\"center\"> $row[User]</td>
-                  <td><i class=\"fa fa-user\"></i><p class=\"center\"> $row[Date]</td>
-                </tr>
-                <tr>
-                  <td><i class=\"fa fa-building\"></i><p class=\"center\"> $row[Company]</td>
-                  <td><i class=\"fa fa-briefcase\"></i><p class=\"center\"> $row[Position]</td>
-                </tr>
-              </table>
+              <div class=\"src-tab-right\">
+                <div class=\"src-tab-head\">
+                  <div class=\"src-tab-title\"><a href=\"view.php?id=$row[Id]\"><h3>$row[Title]</h3></a></div>
+                  <div class=\"src-tab-title\"><h3><i class=\"fa fa-thumbs-up\"></i> $votes</h3></div>
+                </div>
+                <hr>
+                <table class=\"src-tab-info\">
+                  <tr>
+                    <td><i class=\"fa fa-user\"></i> $row[User]</td>
+                    <td><i class=\"fa fa-calendar\"></i> $row[Date]</td>
+                  </tr>
+                  <tr>
+                    <td><i class=\"fa fa-building\"></i> $row[Company]</td>
+                    <td><i class=\"fa fa-briefcase\"></i> $row[Position]</td>
+                  </tr>
+                </table>
+              </div>
             </div>";
           }
 

@@ -151,9 +151,9 @@
         }
       ?>
 
-      <p class="center"><a href="search.php"><button class="btn btn-primary">
+      <p class="center"><button class="btn btn-primary" onclick="window.history.back();">
         <span style="font-size: 100%" class="glyphicon glyphicon-arrow-left"></span> Go back
-      </button></a></p>
+      </button></p>
     </div>
   </section>
 

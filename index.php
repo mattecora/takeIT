@@ -70,7 +70,7 @@
 					<div class="col-md-12">
 						<div class="st-home-unit">
 							<div class="hero-txt">
-								<p class="hero-work" style="font-size: 36px; line-height: 50px;">Experiences - Mentors - Young Talents</p>
+								<p class="hero-work" style="font-size: 36px; line-height: 50px;">Mentors - Experiences - Young Talents</p>
 								<h2 class="hero-title">A ticket for your dream job</h2>
 								<a href="#subscribe"><button class="btn btn-main btn-lg">Get Started</button></a>
 							</div>
@@ -301,7 +301,5 @@
 		<script src="js/owl.carousel.js"></script>
 		<script src="js/jquery.ajaxchimp.min.js"></script>
 		<script src="js/script.js"></script>
-
-		<script></script>
 	</body>
 </html>
