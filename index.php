@@ -58,7 +58,6 @@
               <li><a href="#subscribe">Subscribe</a></li>
               <li><a href="#faq">FAQ</a></li>
               <li><a href="login.php">Login</a></li>
-              <li><a href="signup.php">Signup</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div>
@@ -125,21 +124,21 @@
 					<div class="col-md-4">
 						<div class="funfact">
 							<div class="st-funfact-icon"><i class="fa fa-users"></i></div>
-							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="25964" data-runit="1">0</span>+</div>
+							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="5000" data-runit="1">0</span>+</div>
 							<strong class="funfact-title">Community</strong>
 						</div><!-- .funfact -->
 					</div>
 					<div class="col-md-4">
 						<div class="funfact">
 							<div class="st-funfact-icon"><i class="fa fa-pencil-square-o"></i></div>
-							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="35469" data-runit="1">0</span>+</div>
+							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="18300" data-runit="1">0</span>+</div>
 							<strong class="funfact-title">Experiences Shared</strong>
 						</div><!-- .funfact -->
 					</div>
 					<div class="col-md-4">
 						<div class="funfact">
 							<div class="st-funfact-icon"><i class="fa fa-building-o"></i></div>
-							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="86214" data-runit="1">0</span>+</div>
+							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="8740" data-runit="1">0</span>+</div>
 							<strong class="funfact-title">Connections Created</strong>
 						</div><!-- .funfact -->
 					</div>
@@ -156,32 +155,32 @@
 								<li>
 									<div class="testimonial">
 										<div class="testimonial-img">
-											<img src="photos/client.jpg" alt="">
+											<img src="photos/client1.jpg" alt="">
 										</div>
 										<blockquote>
-											<p>Tueri tantis inter variis deterritum facta caret pleniorem, efficiat affert quiete, commodis comparat facio ponti, adolescens recta iucundius mundi nostrum viris quae utilitatibus.</p>
-											<footer>Joseph Thompson, <cite title="Source Title">Example Inc.</cite></footer>
+											<p>It’s awesome, really. I can’t say enough about how well the service is designed to every student's need, interest and skills. Overall, TakeIT has allowed me to get an edge on the competition and to go above and beyond my expectations.</p>
+											<footer>Benedetta Fassino, <cite title="Source Title">Example Inc.</cite></footer>
 										</blockquote>
 									</div>
 								</li>
 								<li>
 									<div class="testimonial">
 										<div class="testimonial-img">
-											<img src="photos/client.jpg" alt="">
+											<img src="photos/client2.jpg" alt="">
 										</div>
 										<blockquote>
-											<p>Contrariis labore vetuit scaevola, contra percurri adamare efficeret quibus. Nostram consulatu mediocritatem maiorem, cyrenaicisque, quandam accedit veniat cognitioque, animadvertat accusantibus temporibus maximeque litterae.</p>
-											<footer style="color: #000;">Nancy Ford, <cite title="Source Title">Example Inc.</cite></footer>
+											<p>Thanks to TakeIT I was committed to continuously learning through mine mentorship program: amazing!</p>
+											<footer>John Ford, <cite title="Source Title">Example Inc.</cite></footer>
 										</blockquote>
 									</div>
 								</li>
 								<li>
 									<div class="testimonial">
 										<div class="testimonial-img">
-											<img src="photos/client.jpg" alt="">
+											<img src="photos/client3.jpg" alt="">
 										</div>
 										<blockquote>
-											<p>Illas, volumus prosperum. Nostras eoque statua cuius corrumpit praetor aliter quaeso propter ei, quam inducitur ruant doctiores sanguinem atomum molestiae, antiqua inculta dicent.</p>
+											<p>I love this guys providing me an excellent service: they are continuously planning for improvement.</p>
 											<footer>Arthur Fernandez, <cite title="Source Title">Example Inc.</cite></footer>
 										</blockquote>
 									</div>
@@ -230,22 +229,22 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="faq">
-							<h3><i class="fa fa-question-circle"></i> Minime paulo beatus stare?</h3>
-							<p>Praesidium quaerat doloribus turpis fruuntur vocant postremo optimus utraque, veserim vitae appellant fructuosam, mediocris consistat impetu illae coniunctione modi consequentis nosque, vis qui deorum, poenis fuisse timorem ferae fastidium.</p>
+							<h3><i class="fa fa-question-circle"></i> 1. What is takeIT and why should I subscribe to it? </h3>
+							<p>TakeIT is a platform that fills the gap between students and job market. You will have access not only to thousands of experiences from professionals and mentors, but you will have the opportunity to be selected for our mentorship program: a customized program that suits your interests and skills.</p>
 						</div>
 						<div class="faq">
-							<h3><i class="fa fa-question-circle"></i> Ferentur interrogari diceret?</h3>
-							<p>Pertinerent non importari, populo faciendi civium vetuit. Gravitate numquam praesentium fabulas. Abest ponatur ineruditus restat consoletur causam, ordiamur temperantiam repellat desistemus conquirendae molestia aiunt discenda monet.</p>
+							<h3><i class="fa fa-question-circle"></i> 2. Is it a free platform?</h3>
+							<p>The platform offers a freemium service: the basic service will be always free for everyone in the world, but if you want to get full access to our folder of experiences you will have to pay a monthly subscription.</p>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="faq">
-							<h3><i class="fa fa-question-circle"></i> Dicent erigimur secutus fortunae?</h3>
-							<p>Quarum difficilius aegritudo epularum municipem alias. Vidisse litteris, rationibus eadem, mandaremus maluisset, delectus terrore angusta deduceret numquam fidelissimae mens gravissimo propter, tradit, fastidium facta facerem qua quippiam vacuitate cupiditatum admirer navigandi.</p>
+							<h3><i class="fa fa-question-circle"></i> 3. How can I get into a mentorship program? Are there any specific requirements in order to get access to the program?</h3>
+							<p>We are going to select the students that are eligible to be mentored by looking at the curriculum of the candidates and by making an overall valuation. There aren't any specific requirements, but the main criteria for the profile valuation will be your GPA, international experience and your motivational letter that you will have to submit during the application process. The mentorship program is free, being based on merit.</p>
 						</div>
 						<div class="faq">
-							<h3><i class="fa fa-question-circle"></i> Molestiae dedocere effluere?</h3>
-							<p>Habeo mala nocet perpetiuntur legendos dicemus levitatibus abducat futura, occultarum probant vitae evertunt laudantium docendi difficilem, offendit concederetur tuo hortensio deserere, molita gaudemus titillaret difficilius, parum timeret unum molestiam omnis vitae.</p>
+							<h3><i class="fa fa-question-circle"></i> 4. How can you guarantee that the person that write the experience actually had that particular experience?</h3>
+							<p>We are going to submit surveys to every mentor and professional that is on the platform, so that we can use them as a sign of truth.</p>
 						</div>
 					</div>
 				</div>

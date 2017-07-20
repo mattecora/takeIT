@@ -51,7 +51,6 @@
             <li><a href="./#subscribe">Subscribe</a></li>
             <li><a href="./#faq">FAQ</a></li>
             <li class="active"><a href="login.php">Login</a></li>
-            <li><a href="signup.php">Signup</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
