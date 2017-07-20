@@ -5,7 +5,7 @@
 	$db = db_connect();
 	$user = $db->query("SELECT * FROM user WHERE User = '$_SESSION[user]'")->fetch_array();
 
-	
+
 
 	$mentor = $db->query("SELECT * FROM mentor WHERE Mentor = '$user[Mentor]'")->fetch_array();
 	$db->close();
@@ -58,7 +58,8 @@
 	        <!-- Collect the nav links, forms, and other content for toggling -->
 	        <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li class="active"><a class="nav-item-href" href="./index.php">Dashboard</a></li>
+	            <li><a class="nav-item-href" href="./index.php">Dashboard</a></li>
+	            <li class="active"><a class="nav-item-href" href="./mentor.php">My mentor</a></li>
 	            <li><a class="nav-item-href" href="./search.php">Search</a></li>
 	            <li><a class="nav-item-href" href="./add.php">Add</a></li>
 	            <li><a class="nav-item-href" href="../">Log out</a></li>

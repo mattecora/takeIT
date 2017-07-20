@@ -77,6 +77,7 @@
         <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
           <ul class="nav navbar-nav navbar-right">
             <li><a class="nav-item-href" href="./index.php">Dashboard</a></li>
+            <li><a class="nav-item-href" href="./mentor.php">My mentor</a></li>
             <li><a class="nav-item-href" href="./search.php">Search</a></li>
             <li><a class="nav-item-href" href="./add.php">Add</a></li>
             <li><a class="nav-item-href" href="../">Log out</a></li>
