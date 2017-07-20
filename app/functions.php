@@ -1,6 +1,6 @@
 <?php
   function db_connect() {
-    $db = new mysqli("localhost", "root", "", "my_eiatakeit");
+    $db = new mysqli("localhost", "eiatakeit", "", "my_eiatakeit");
     return $db;
   }
 
