@@ -37,31 +37,34 @@
 	<body data-spy="scroll" data-target=".main-nav">
 
 		<header class="st-navbar">
-			<nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
-				<div class="container"><!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed navbar-right" data-toggle="collapse" data-target="#sept-main-nav">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="./"><img src="../photos/logo_white.png" alt="" class="img-responsive"></a>
-					</div>
+	    <nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
+	      <div class="container"><!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sept-main-nav">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <ul class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sept-main-nav" style="border: 0px;">
+	            <li><a href="profile.php" style="padding-top:27px; height: 102px;"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
+	          </ul>
+	          <a class="navbar-brand" href="../"><img src="../photos/logo_white.png" alt="" class="img-responsive"></a>
+	        </div>
 
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse main-nav" id="sept-main-nav">
-						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="#home">Home</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#subscribe">Subscribe</a></li>
-							<li><a href="#faq">FAQ</a></li>
-							<li><a href="login.php">Login</a></li>
-						</ul>
-					</div><!-- /.navbar-collapse -->
-				</div>
-			</nav>
-		</header>
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	        <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li class="active"><a class="nav-item-href" href="./index.php">Dashboard</a></li>
+	            <li><a class="nav-item-href" href="./search.php">Search</a></li>
+	            <li><a class="nav-item-href" href="./add.php">Add</a></li>
+	            <li><a class="nav-item-href" href="../">Log out</a></li>
+	            <li style=""><a href="profile.php" class="profile-img-href"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
+	      </div>
+	    </nav>
+	  </header>
 
 	  <section class="home midhome" id="home" data-stellar-background-ratio="0.4">
 	    <div class="container">

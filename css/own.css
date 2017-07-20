@@ -152,3 +152,19 @@ html, body {
   width: 50%;
   padding: 10px;
 }
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a.nav-item-href {
+    padding-top: 41px;
+  }
+
+  .navbar-nav > li > a.profile-img-href {
+    padding-top:27px;
+    height: 102px;
+  }
+
+}
+
+.st-navbar-mini .navbar-right .profile-img-href {
+  padding-top: 4px !important;
+}

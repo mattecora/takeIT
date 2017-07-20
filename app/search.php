@@ -50,11 +50,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./index.php">Dashboard</a></li>
-            <li class="active"><a href="./search.php">Search</a></li>
-            <li><a href="./add.php">Add</a></li>
-            <li><a href="../">Log out</a></li>
-            <li style=""><a href="profile.php" style="padding-top:27px; height: 102px;"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
+            <li class="active"><a class="nav-item-href" href="./index.php">Dashboard</a></li>
+            <li><a class="nav-item-href" href="./search.php">Search</a></li>
+            <li><a class="nav-item-href" href="./add.php">Add</a></li>
+            <li><a class="nav-item-href" href="../">Log out</a></li>
+            <li style=""><a href="profile.php" class="profile-img-href"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
