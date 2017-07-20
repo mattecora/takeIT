@@ -60,22 +60,32 @@
     </nav>
   </header>
 
-  <section class="home bighome" id="home" data-stellar-background-ratio="0.4" style="height: 100%;">
+  <section class="home midhome" id="home" data-stellar-background-ratio="0.4">
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
           <div class="st-home-unit">
             <div class="hero-txt">
               <h2 class="hero-title">SIGNUP</h2>
-              <form method="post" action="app/index.php" id="login_form">
-                <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
-                <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
-                <p class="center"><button type="submit" class="btn btn-primary">Signup</button></p>
-              </form>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <h1 class="center">Enter your profile info</h1>
+      <form method="post" action="app/index.php" id="login_form" style="font-size: 26px; text-align: center;">
+        <div class="row" style="padding-top: 20px;">
+          <div class="form-inline col-md-4"><i class="fa fa-user"></i> <input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></div>
+          <div class="form-inline col-md-4"><i class="fa fa-key"></i> <input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></div>
+          <div class="form-inline col-md-4"><i class="fa fa-envelope"></i> <input name="mail" type="text" class="form-control" placeholder="Email" aria-describedby="Insert your email"></div>
+          <div class="col-md-3"></div>
+        </div>
+        <div class="center" style="padding-top: 20px;"><button type="submit" class="btn btn-primary">Signup</button></div>
+      </form>
     </div>
   </section>
 

@@ -1,3 +1,13 @@
+<?php
+	include("functions.php");
+	check_logged();
+
+	$db = db_connect();
+	$user = $db->query("SELECT * FROM user WHERE User = '$_SESSION[user]'")->fetch_array();
+	$mentor = $db->query("SELECT * FROM mentor WHERE Mentor = '$user[Mentor]'")->fetch_array();
+	$db->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,14 +18,14 @@
 
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,400italic,600,300italic,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
 		<!-- Bootstrap -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/font-awesome.min.css" rel="stylesheet">
-		<link href="css/owl.carousel.css" rel="stylesheet">
-		<link href="css/owl.theme.css" rel="stylesheet">
-		<link href="css/owl.transitions.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-    <link href="css/footer.css" rel="stylesheet">
-		<link href="css/own.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/font-awesome.min.css" rel="stylesheet">
+		<link href="../css/owl.carousel.css" rel="stylesheet">
+		<link href="../css/owl.theme.css" rel="stylesheet">
+		<link href="../css/owl.transitions.css" rel="stylesheet">
+		<link href="../css/style.css" rel="stylesheet">
+	  <link href="../css/footer.css" rel="stylesheet">
+		<link href="../css/own.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +46,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="./"><img src="photos/logo_white.png" alt="" class="img-responsive"></a>
+						<a class="navbar-brand" href="./"><img src="../photos/logo_white.png" alt="" class="img-responsive"></a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,38 +63,74 @@
 			</nav>
 		</header>
 
-    <section class="home midhome" id="home" data-stellar-background-ratio="0.4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-              <div class="hero-txt">
-                <h2 class="hero-title">Profile info</h2>
-              </div>
-          </div>
-        </div>
-      </div>
-    </section>
+	  <section class="home midhome" id="home" data-stellar-background-ratio="0.4">
+	    <div class="container">
+	      <div class="row">
+	        <div class="col-md-12">
+	            <div class="hero-txt">
+	              <h2 class="hero-title">Talk with your mentor</h2>
+	            </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
 
-    <!-- Content -->
-    <section class="content">
-      <div class="container">
+	  <!-- Content -->
+	  <section class="content">
+	    <div class="container">
+				<p></p>
+	    </div>
+	  </section>
 
-      </div>
-    </section>
+		<footer class="footer-distributed">
+	    <div class="footer-left">
+	      <img src="../photos/logo_white.png" alt="takeIT!" style="width: 100px;">
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.easing.min.js"></script>
-    <script src="../js/jquery.stellar.js"></script>
-    <script src="../js/jquery.appear.js"></script>
-    <script src="../js/jquery.nicescroll.min.js"></script>
-    <script src="../js/jquery.countTo.js"></script>
-    <script src="../js/jquery.shuffle.modernizr.js"></script>
-    <script src="../js/jquery.shuffle.js"></script>
-    <script src="../js/owl.carousel.js"></script>
-    <script src="../js/jquery.ajaxchimp.min.js"></script>
-    <script src="../js/script.js"></script>
-  </body>
-  </html>
+	      <div class="footer-links">
+	        <ul>
+	          <li><a href="#home">Home</a></li>
+	          <li><a href="#about">About</a></li>
+	          <li><a href="#subscribe">Subscribe</a></li>
+	          <li><a href="#faq">FAQ</a></li>
+	          <li><a href="login.php">Login</a></li>
+	        </ul>
+	      </div>
+
+	      <p class="footer-company-name">takeIT! &copy; 2017</p>
+	    </div>
+
+	    <div class="footer-center">
+	      <div>
+	        <i class="fa fa-facebook"></i>
+	        <p><a href="https://www.facebook.com/TakeItofficial">Like us on Facebook</a></p>
+	      </div>
+	      <div>
+	        <i class="fa fa-envelope"></i>
+	        <p><a href="mailto:eiatakeit@gmail.com">Send us an email</a></p>
+	      </div>
+	    </div>
+
+	    <div class="footer-right">
+	      <p class="footer-company-about">
+	        <span>This idea has been developed during European Innovation Academy (Turin, July 9th-28th 2017)</span>
+	        <div style="text-align: center;"><img src="../photos/eia_logo.png" alt="EIA" style="height: 60px;"></div>
+	      </p>
+	    </div>
+	  </footer>
+
+	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	  <script src="../js/jquery.min.js"></script>
+	  <!-- Include all compiled plugins (below), or include individual files as needed -->
+	  <script src="../js/bootstrap.min.js"></script>
+	  <script src="../js/jquery.easing.min.js"></script>
+	  <script src="../js/jquery.stellar.js"></script>
+	  <script src="../js/jquery.appear.js"></script>
+	  <script src="../js/jquery.nicescroll.min.js"></script>
+	  <script src="../js/jquery.countTo.js"></script>
+	  <script src="../js/jquery.shuffle.modernizr.js"></script>
+	  <script src="../js/jquery.shuffle.js"></script>
+	  <script src="../js/owl.carousel.js"></script>
+	  <script src="../js/jquery.ajaxchimp.min.js"></script>
+	  <script src="../js/script.js"></script>
+	</body>
+</html>

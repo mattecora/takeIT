@@ -7,9 +7,12 @@
     $_SESSION["user"] = $_POST["user"];
     $_SESSION["pwd"] = $_POST["pwd"];
   }
-  $db->close();
 
   check_logged();
+
+  $info = $db->query("SELECT * FROM user WHERE User = '$_SESSION[user]'")->fetch_array();
+  
+  $db->close();
 ?>
 
 <!DOCTYPE html>
