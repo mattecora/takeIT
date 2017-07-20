@@ -4,6 +4,9 @@
 
 	$db = db_connect();
 	$user = $db->query("SELECT * FROM user WHERE User = '$_SESSION[user]'")->fetch_array();
+
+	
+
 	$mentor = $db->query("SELECT * FROM mentor WHERE Mentor = '$user[Mentor]'")->fetch_array();
 	$db->close();
 ?>
@@ -78,12 +81,38 @@
 	    </div>
 	  </section>
 
-	  <!-- Content -->
+		<!-- Content -->
 	  <section class="content">
 	    <div class="container">
-				<p>
-					<?php echo $mentor["Name"]; ?>
-				</p>
+	      <div class="row">
+	        <!-- Profile pic -->
+	        <div class="col-md-4">
+	          <div class="center">
+	            <h3>Mentor pic</h3>
+	            <hr>
+	            <img src="../photos/profile.png" style="width: 40%;">
+	          </div>
+	        </div>
+
+	        <!-- Login data -->
+	        <div class="col-md-4">
+	          <div class="center">
+	            <h3>Mentor data</h3>
+	            <hr>
+	            <p>Name: <?php echo $mentor["Name"]; ?></p>
+	            <p>Surname: <?php echo $mentor["Surname"]; ?></p>
+	          </div>
+	        </div>
+
+	        <!-- Contributions -->
+	        <div class="col-md-4">
+	          <div class="center">
+	            <h3>Mentor contact</h3>
+	            <hr>
+	            <p>Mail: <?php echo "<a href=\"mailto:$mentor[Contact]\">$mentor[Contact]</a>"; ?></p>
+	          </div>
+	        </div>
+	      </div>
 	    </div>
 	  </section>
 
