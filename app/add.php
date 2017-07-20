@@ -26,6 +26,7 @@
   <link href="../css/owl.carousel.css" rel="stylesheet">
   <link href="../css/owl.transitions.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/footer.css" rel="stylesheet">
   <link href="../css/own.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -120,6 +121,42 @@
       </div>
     </section>
   </form>
+
+  <footer class="footer-distributed">
+    <div class="footer-left">
+      <img src="../photos/logo_white.png" alt="takeIT!" style="width: 100px;">
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="login.php">Login</a></li>
+        </ul>
+      </div>
+
+      <p class="footer-company-name">takeIT! &copy; 2017</p>
+    </div>
+
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-facebook"></i>
+        <p><a href="https://www.facebook.com/TakeItofficial">Like us on Facebook</a></p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:eiatakeit@gmail.com">Send us an email</a></p>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>This idea has been developed during European Innovation Academy (Turin, July 9th-28th 2017)</span>
+        <div style="text-align: center;"><img src="../photos/eia_logo.png" alt="EIA" style="height: 60px;"></div>
+      </p>
+    </div>
+  </footer>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery.min.js"></script>

@@ -52,6 +52,7 @@
   <link href="../css/owl.carousel.css" rel="stylesheet">
   <link href="../css/owl.transitions.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/footer.css" rel="stylesheet">
   <link href="../css/own.css" rel="stylesheet">
 </head>
 <body>
@@ -91,24 +92,22 @@
               <h2 class="hero-title"><?php echo $info["Title"]; ?></h2>
             </div>
         </div>
-      </div>
-      <div class="row row-info-exp">
-        <div class="col-md-4">
-          <i class="fa fa-calendar"></i> <?php echo $info["Date"]; ?>
-        </div>
-        <div class="col-md-4">
-          <i class="fa fa-building"></i> <?php echo $info["Company"]; ?>
-        </div>
-        <div class="col-md-4">
-          <i class="fa fa-briefcase"></i> <?php echo $info["Position"]; ?>
-        </div>
-      </div>
-      <div class="row row-info-exp" style="padding-top: 30px;">
-        <div class="col-md-4 col-md-offset-1">
-          <i class="fa fa-user"></i> <?php echo $info["User"]; ?>
-        </div>
-        <div class="col-md-4 col-md-offset-2">
-          <i class="fa fa-thumbs-up"></i> <?php echo $info["Votes"]; ?>
+        <div class="row-fluid row-info-exp">
+          <div class="col-md-2 col-md-offset-1">
+            <i class="fa fa-calendar"></i><p><?php echo $info["Date"]; ?></p>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-building"></i><p><?php echo $info["Company"]; ?></p>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-briefcase"></i><p><?php echo $info["Position"]; ?></p>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-user"></i><p><?php echo $info["User"]; ?></p>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-thumbs-up"></i><p><?php echo $info["Votes"]; ?></p>
+          </div>
         </div>
       </div>
     </div>
@@ -156,6 +155,42 @@
       </button></p>
     </div>
   </section>
+
+  <footer class="footer-distributed">
+    <div class="footer-left">
+      <img src="../photos/logo_white.png" alt="takeIT!" style="width: 100px;">
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="login.php">Login</a></li>
+        </ul>
+      </div>
+
+      <p class="footer-company-name">takeIT! &copy; 2017</p>
+    </div>
+
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-facebook"></i>
+        <p><a href="https://www.facebook.com/TakeItofficial">Like us on Facebook</a></p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:eiatakeit@gmail.com">Send us an email</a></p>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>This idea has been developed during European Innovation Academy (Turin, July 9th-28th 2017)</span>
+        <div style="text-align: center;"><img src="../photos/eia_logo.png" alt="EIA" style="height: 60px;"></div>
+      </p>
+    </div>
+  </footer>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery.min.js"></script>
