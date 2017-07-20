@@ -5,9 +5,12 @@
 	$db = db_connect();
 	$user = $db->query("SELECT * FROM user WHERE User = '$_SESSION[user]'")->fetch_array();
 
-	
+	if (is_null($user["Mentor"])) {
+		$mentor = false;
+	} else {
+		$mentor = $db->query("SELECT * FROM mentor WHERE Mentor = '$user[Mentor]'")->fetch_array();
+	}
 
-	$mentor = $db->query("SELECT * FROM mentor WHERE Mentor = '$user[Mentor]'")->fetch_array();
 	$db->close();
 ?>
 
@@ -99,8 +102,11 @@
 	          <div class="center">
 	            <h3>Mentor data</h3>
 	            <hr>
-	            <p>Name: <?php echo $mentor["Name"]; ?></p>
-	            <p>Surname: <?php echo $mentor["Surname"]; ?></p>
+							<?php
+								if (!$mentor) echo "<p>No mentor yet</p>";
+							?>
+	            <p>Name: <?php if ($mentor) echo $mentor["Name"]; else echo "None"; ?></p>
+	            <p>Surname: <?php if ($mentor) echo $mentor["Surname"]; else echo "None"; ?></p>
 	          </div>
 	        </div>
 
@@ -109,7 +115,10 @@
 	          <div class="center">
 	            <h3>Mentor contact</h3>
 	            <hr>
-	            <p>Mail: <?php echo "<a href=\"mailto:$mentor[Contact]\">$mentor[Contact]</a>"; ?></p>
+							<?php
+								if (!$mentor) echo "<p>No mentor yet</p>";
+							?>
+	            <p>Mail: <?php if ($mentor) echo "<a href=\"mailto:$mentor[Contact]\">$mentor[Contact]</a>"; else echo "None"; ?></p>
 	          </div>
 	        </div>
 	      </div>
