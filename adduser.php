@@ -86,7 +86,7 @@
           if ($query)
             draw_msg_ok("User registered. <a href=\"../login.php\">Go to login page</a>");
           else
-            draw_msg_err("There was an error in registering the user. <a href=\"../\">Go to home page</a>");
+            draw_msg_err("There was an error in registering the user. <a href=\"./\">Go to home page</a>");
         ?>
       </div>
     </section>
