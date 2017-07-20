@@ -90,20 +90,32 @@
   <section class="content" style="padding-top: 100px;">
     <div class="container">
       <div class="row">
+        <!-- Mentor button -->
+        <div class="col-md-4">
+          <a href="mentor.php">
+            <div class="st-feature">
+              <div class="st-feature-icon" style="height: 250px; width: 250px; line-height: 250px; font-size: 90px;"><i class="fa fa-graduation-cap"></i></div>
+              <strong class="st-feature-title">Contact your mentor</strong>
+            </div>
+          </a>
+        </div>
+
         <!-- Search button -->
-        <div class="col-md-6">
+        <div class="col-md-4">
           <a href="search.php">
             <div class="st-feature">
               <div class="st-feature-icon" style="height: 250px; width: 250px; line-height: 250px; font-size: 90px;"><i class="fa fa-search"></i></div>
+              <strong class="st-feature-title">Search an experience</strong>
             </div>
           </a>
         </div>
 
         <!-- Add button -->
-        <div class="col-md-6">
+        <div class="col-md-4">
           <a href="add.php">
             <div class="st-feature">
               <div class="st-feature-icon" style="height: 250px; width: 250px; line-height: 250px; font-size: 90px;"><i class="fa fa-pencil"></i></div>
+              <strong class="st-feature-title">Add your experience</strong>
             </div>
           </a>
         </div>
