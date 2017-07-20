@@ -19,6 +19,7 @@
   <link href="css/owl.theme.css" rel="stylesheet">
   <link href="css/owl.transitions.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/footer.css" rel="stylesheet">
   <link href="css/own.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -76,18 +77,75 @@
 
   <section class="content">
     <div class="container">
-      <h1 class="center">Enter your profile info</h1>
       <form method="post" action="app/index.php" id="login_form" style="font-size: 26px; text-align: center;">
+        <h1 class="center">Enter your profile info</h1>
+
         <div class="row" style="padding-top: 20px;">
           <div class="form-inline col-md-4"><i class="fa fa-user"></i> <input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></div>
           <div class="form-inline col-md-4"><i class="fa fa-key"></i> <input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></div>
           <div class="form-inline col-md-4"><i class="fa fa-envelope"></i> <input name="mail" type="text" class="form-control" placeholder="Email" aria-describedby="Insert your email"></div>
-          <div class="col-md-3"></div>
         </div>
+
+        <div class="row" style="padding-top: 20px;">
+          <div class="form-inline col-md-4"><i class="fa fa-calendar"></i> <input name="age" type="number" class="form-control" placeholder="Age" aria-describedby="Insert your age"></div>
+          <div class="form-inline col-md-4"><i class="fa fa-graduation-cap"></i> <input name="university" type="text" class="form-control" placeholder="University" aria-describedby="Insert your university"></div>
+          <div class="form-inline col-md-4"><i class="fa fa-briefcase"></i> <input name="sector" type="text" class="form-control" placeholder="Sector" aria-describedby="Insert your sector"></div>
+        </div>
+
+        <div class="row" style="padding-top: 20px;">
+          <h1 class="center">Upload your curriculum</h2>
+          <div class="form-inline col-md-6 col-md-offset-3">
+            <input name="curriculum" type="file" class="form-control" placeholder="Curriculum" aria-describedby="Insert your curriculum">
+          </div>
+        </div>
+
+        <div class="row" style="padding-top: 20px;">
+          <h1 class="center">Why are you interested in takeIT?</h2>
+          <div class="form-inline col-md-10 col-md-offset-1">
+            <textarea rows="10" maxlength="3000" style="width: 100%;"></textarea>
+          </div>
+        </div>
+
         <div class="center" style="padding-top: 20px;"><button type="submit" class="btn btn-primary">Signup</button></div>
       </form>
     </div>
   </section>
+
+  <footer class="footer-distributed">
+    <div class="footer-left">
+      <img src="photos/logo_white.png" alt="takeIT!" style="width: 100px;">
+
+      <div class="footer-links">
+        <ul>
+          <li class="active"><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="login.php">Login</a></li>
+        </ul>
+      </div>
+
+      <p class="footer-company-name">takeIT! &copy; 2017</p>
+    </div>
+
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-facebook"></i>
+        <p><a href="https://www.facebook.com/TakeItofficial">Like us on Facebook</a></p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:eiatakeit@gmail.com">Send us an email</a></p>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>This idea has been developed during European Innovation Academy (Turin, July 9th-28th 2017)</span>
+        <div style="text-align: center;"><img src="photos/eia_logo.png" alt="EIA" style="height: 60px;"></div>
+      </p>
+    </div>
+  </footer>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="js/jquery.min.js"></script>
