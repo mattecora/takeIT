@@ -66,9 +66,9 @@
               <!-- Search form -->
               <div class="col-md-6 col-md-offset-3">
                 <form class="form" method="get" action="search.php" id="company_form">
-                  <div class="form-inline" style="text-align: center;">
+                  <div class="form" style="text-align: center;">
                     <input name="company" type="text" class="form-control" placeholder="Company" aria-describedby="Insert the company" style="min-width: 60%;">
-                    <button type="submit" class="btn btn-primary" id="btn-search-company">Search company</button>
+                    <button type="submit" class="btn btn-primary" id="btn-search-company" style="margin-top: 30px;">Search company</button>
                   </div>
                 </form>
               </div>

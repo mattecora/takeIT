@@ -47,10 +47,10 @@
         <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
           <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#home">Home</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#subscribe">Subscribe</a></li>
-							<li><a href="#faq">FAQ</a></li>
+							<li><a href="./#home">Home</a></li>
+							<li><a href="./#about">About</a></li>
+							<li><a href="./#subscribe">Subscribe</a></li>
+							<li><a href="./#faq">FAQ</a></li>
 							<li class="active"><a href="login.php">Login</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
