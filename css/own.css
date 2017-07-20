@@ -86,8 +86,9 @@ html, body {
 
 .row-info-exp {
   text-align: center;
-  font-size: 24px;
+  font-size: 30px;
   color: #fff;
+  line-height: 36px;
 }
 
 .center {

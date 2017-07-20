@@ -91,24 +91,22 @@
               <h2 class="hero-title"><?php echo $info["Title"]; ?></h2>
             </div>
         </div>
-      </div>
-      <div class="row row-info-exp">
-        <div class="col-md-4">
-          <i class="fa fa-calendar"></i> <?php echo $info["Date"]; ?>
-        </div>
-        <div class="col-md-4">
-          <i class="fa fa-building"></i> <?php echo $info["Company"]; ?>
-        </div>
-        <div class="col-md-4">
-          <i class="fa fa-briefcase"></i> <?php echo $info["Position"]; ?>
-        </div>
-      </div>
-      <div class="row row-info-exp" style="padding-top: 30px;">
-        <div class="col-md-4 col-md-offset-1">
-          <i class="fa fa-user"></i> <?php echo $info["User"]; ?>
-        </div>
-        <div class="col-md-4 col-md-offset-2">
-          <i class="fa fa-thumbs-up"></i> <?php echo $info["Votes"]; ?>
+        <div class="row-fluid row-info-exp">
+          <div class="col-md-2 col-md-offset-1">
+            <i class="fa fa-calendar"></i><p><?php echo $info["Date"]; ?></p>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-building"></i><p><?php echo $info["Company"]; ?></p>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-briefcase"></i><p><?php echo $info["Position"]; ?></p>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-user"></i><p><?php echo $info["User"]; ?></p>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-thumbs-up"></i><p><?php echo $info["Votes"]; ?></p>
+          </div>
         </div>
       </div>
     </div>
