@@ -1,5 +1,5 @@
 <?php
-	include("functions.php");
+	include("app/functions.php");
 
   if (empty($_POST["user"]) || empty($_POST["pwd"]) || empty($_POST["mail"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["age"]) || empty($_POST["university"]) || empty($_POST["sector"])) {
     include("error.php");
