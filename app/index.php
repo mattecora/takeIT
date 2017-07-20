@@ -28,6 +28,7 @@
   <link href="../css/owl.carousel.css" rel="stylesheet">
   <link href="../css/owl.transitions.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/footer.css" rel="stylesheet">
   <link href="../css/own.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -79,41 +80,65 @@
   </section>
 
   <!-- Content -->
-  <section class="content">
+  <section class="content" style="padding-top: 100px;">
     <div class="container">
       <div class="row">
         <!-- Search button -->
-        <div class="col-md-4">
+        <div class="col-md-6">
           <a href="search.php">
             <div class="st-feature">
-              <div class="st-feature-icon"><i class="fa fa-search"></i></div>
-              <strong class="st-feature-title">Search</strong>
+              <div class="st-feature-icon" style="height: 400px; width: 400px; line-height: 400px; font-size: 120px;"><i class="fa fa-search"></i></div>
             </div>
           </a>
         </div>
 
         <!-- Add button -->
-        <div class="col-md-4">
+        <div class="col-md-6">
           <a href="add.php">
             <div class="st-feature">
-              <div class="st-feature-icon"><i class="fa fa-pencil"></i></div>
-              <strong class="st-feature-title">Add</strong>
-            </div>
-          </a>
-        </div>
-
-        <!-- Profile button -->
-        <div class="col-md-4">
-          <a href="profile.php">
-            <div class="st-feature">
-              <div class="st-feature-icon"><i class="fa fa-user"></i></div>
-              <strong class="st-feature-title">Profile</strong>
+              <div class="st-feature-icon" style="height: 400px; width: 400px; line-height: 400px; font-size: 120px;"><i class="fa fa-pencil"></i></div>
             </div>
           </a>
         </div>
       </div>
     </div>
   </section>
+
+  <footer class="footer-distributed">
+    <div class="footer-left">
+      <img src="../photos/logo_white.png" alt="takeIT!" style="width: 100px;">
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="login.php">Login</a></li>
+        </ul>
+      </div>
+
+      <p class="footer-company-name">takeIT! &copy; 2017</p>
+    </div>
+
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-facebook"></i>
+        <p><a href="https://www.facebook.com/TakeItofficial">Like us on Facebook</a></p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:eiatakeit@gmail.com">Send us an email</a></p>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>This idea has been developed during European Innovation Academy (Turin, July 9th-28th 2017)</span>
+        <div style="text-align: center;"><img src="../photos/eia_logo.png" alt="EIA" style="height: 60px;"></div>
+      </p>
+    </div>
+  </footer>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../js/jquery.min.js"></script>

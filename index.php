@@ -282,7 +282,7 @@
 			<div class="footer-right">
 				<p class="footer-company-about">
 					<span>This idea has been developed during European Innovation Academy (Turin, July 9th-28th 2017)</span>
-          <img src="photos/eia_logo.png" alt="EIA" style="width: 100%">
+          <div style="text-align: center;"><img src="photos/eia_logo.png" alt="EIA" style="height: 60px;"></div>
 				</p>
 			</div>
 		</footer>
