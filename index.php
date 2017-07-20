@@ -88,7 +88,7 @@
 					<div class="col-md-12">
 						<div class="section-title st-center">
 							<h3>What we do</h3>
-							<p>We create connection between you and real workers</p>
+							<p>We create a connection between you and real workers</p>
 						</div>
 						<div class="row">
 							<div class="col-md-4">
@@ -125,7 +125,7 @@
 						<div class="funfact">
 							<div class="st-funfact-icon"><i class="fa fa-users"></i></div>
 							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="25964" data-runit="1">0</span>+</div>
-							<strong class="funfact-title">Users and Mentors</strong>
+							<strong class="funfact-title">Community</strong>
 						</div><!-- .funfact -->
 					</div>
 					<div class="col-md-4">
@@ -222,7 +222,7 @@
 						<!-- <h2 class="tac">frequently asked questions</h2> -->
 						<div class="section-title st-center">
 							<h3>Some questions</h3>
-							<p>frequently asked questions</p>
+							<p>Frequently asked questions</p>
 						</div>
 					</div>
 				</div>
