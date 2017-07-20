@@ -41,6 +41,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <ul class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sept-main-nav" style="border: 0px;">
+            <li><a href="profile.php" style="padding-top:27px; height: 102px;"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
+          </ul>
           <a class="navbar-brand" href="../"><img src="../photos/logo_white.png" alt="" class="img-responsive"></a>
         </div>
 
@@ -50,8 +53,8 @@
             <li><a href="./index.php">Dashboard</a></li>
             <li class="active"><a href="./search.php">Search</a></li>
             <li><a href="./add.php">Add</a></li>
-            <li><a href="./profile.php">Profile</a></li>
-            <li><a href="../">Get out</a></li>
+            <li><a href="../">Log out</a></li>
+            <li style=""><a href="profile.php" style="padding-top:27px; height: 102px;"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
