@@ -51,7 +51,7 @@
 							<li><a href="./#about">About</a></li>
 							<li><a href="./#subscribe">Subscribe</a></li>
 							<li><a href="./#faq">FAQ</a></li>
-							<li class="active"><a href="login.php">Login</a></li>
+							<li><a href="login.php">Login</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
           </ul>
@@ -66,11 +66,11 @@
         <div class="col-md-4 col-md-offset-4">
           <div class="st-home-unit">
             <div class="hero-txt">
-              <h2 class="hero-title">LOGIN</h2>
+              <h2 class="hero-title">SIGNUP</h2>
               <form method="post" action="app/index.php" id="login_form">
                 <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
                 <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
-                <p class="center"><button type="submit" class="btn btn-primary">Login</button><button type="button" onclick="window.location.href='signup.php'" class="btn btn-primary" style="margin-left: 50px;">Signup</button></p>
+                <p class="center"><button type="submit" class="btn btn-primary">Signup</button></p>
               </form>
             </div>
           </div>
