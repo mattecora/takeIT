@@ -81,7 +81,9 @@
 	  <!-- Content -->
 	  <section class="content">
 	    <div class="container">
-				<p></p>
+				<p>
+					<?php echo $mentor["Name"]; ?>
+				</p>
 	    </div>
 	  </section>
 
