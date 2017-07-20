@@ -7,6 +7,14 @@
     margin-top: 12px;
     margin-bottom: 12px;
   }
+
+  .home .hero-txt .hero-title {
+    font-size: 50px;
+  }
+
+  .home .hero-txt .hero-work {
+    font-size: 20px;
+  }
 }
 
 html, body {
@@ -19,12 +27,16 @@ html, body {
   align-items: center;
 }
 
+.home .hero-txt .hero-work {
+  font-size: 36px;
+}
+
 .bighome {
   min-height: 100%;
 }
 
 .midhome {
-  min-height: 30%;
+  /* min-height: 30%; */
 }
 
 .st-member {
@@ -92,6 +104,18 @@ html, body {
 
 .src-tab {
   padding: 30px;
+  display: flex;
+  vertical-align: middle;
+}
+
+.src-tab-left {
+  float: left;
+  width: 20%;
+}
+
+.src-tab-right {
+  width: 80%;
+  padding: 15px;
 }
 
 .src-tab-head {
@@ -99,8 +123,13 @@ html, body {
   justify-content: space-between;
 }
 
-.src-tab-head h3:hover {
+.src-tab-head h3 {
   color: #337ab7;
+  font-size: 36px;
+}
+
+.src-tab-head h3:hover {
+  color: #286090;
 }
 
 .src-tab-title {
@@ -110,4 +139,15 @@ html, body {
 .src-tab-votes {
   float: right;
   text-align: right;
+}
+
+.src-tab-info {
+  border: none;
+  width: 100%;
+  font-size: 26px;
+}
+
+.src-tab-info td {
+  width: 50%;
+  padding: 10px;
 }
