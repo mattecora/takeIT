@@ -94,7 +94,7 @@
         <div class="col-md-6">
           <a href="search.php">
             <div class="st-feature">
-              <div class="st-feature-icon" style="height: 400px; width: 400px; line-height: 400px; font-size: 120px;"><i class="fa fa-search"></i></div>
+              <div class="st-feature-icon" style="height: 250px; width: 250px; line-height: 250px; font-size: 90px;"><i class="fa fa-search"></i></div>
             </div>
           </a>
         </div>
@@ -103,7 +103,7 @@
         <div class="col-md-6">
           <a href="add.php">
             <div class="st-feature">
-              <div class="st-feature-icon" style="height: 400px; width: 400px; line-height: 400px; font-size: 120px;"><i class="fa fa-pencil"></i></div>
+              <div class="st-feature-icon" style="height: 250px; width: 250px; line-height: 250px; font-size: 90px;"><i class="fa fa-pencil"></i></div>
             </div>
           </a>
         </div>
