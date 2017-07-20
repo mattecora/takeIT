@@ -11,7 +11,7 @@
   check_logged();
 
   $info = $db->query("SELECT * FROM user WHERE User = '$_SESSION[user]'")->fetch_array();
-  
+
   $db->close();
 ?>
 
@@ -62,11 +62,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./index.php">Dashboard</a></li>
-            <li><a href="./search.php">Search</a></li>
-            <li><a href="./add.php">Add</a></li>
-            <li><a href="../">Log out</a></li>
-            <li style=""><a href="profile.php" style="padding-top:27px; height: 102px;"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
+            <li class="active"><a class="nav-item-href" href="./index.php">Dashboard</a></li>
+            <li><a class="nav-item-href" href="./search.php">Search</a></li>
+            <li><a class="nav-item-href" href="./add.php">Add</a></li>
+            <li><a class="nav-item-href" href="../">Log out</a></li>
+            <li style=""><a href="profile.php" class="profile-img-href"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
@@ -116,11 +116,11 @@
 
       <div class="footer-links">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#subscribe">Subscribe</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="login.php">Login</a></li>
+          <li><a href="../">Home</a></li>
+          <li><a href="../#about">About</a></li>
+          <li><a href="../#subscribe">Subscribe</a></li>
+          <li><a href="../#faq">FAQ</a></li>
+          <li><a href="../login.php">Login</a></li>
         </ul>
       </div>
 
