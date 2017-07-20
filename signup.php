@@ -77,13 +77,22 @@
 
   <section class="content">
     <div class="container">
-      <form method="post" action="app/index.php" id="login_form" style="font-size: 26px; text-align: center;">
-        <h1 class="center">Enter your profile info</h1>
+      <form method="post" action="app/adduser.php" id="login_form" style="font-size: 26px; text-align: center;">
+        <h1 class="center">Profile info</h1>
 
         <div class="row" style="padding-top: 20px;">
           <div class="form-inline col-md-4"><i class="fa fa-user"></i> <input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></div>
           <div class="form-inline col-md-4"><i class="fa fa-key"></i> <input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></div>
           <div class="form-inline col-md-4"><i class="fa fa-envelope"></i> <input name="mail" type="text" class="form-control" placeholder="Email" aria-describedby="Insert your email"></div>
+        </div>
+
+        <h1 class="center">Anagraphic info</h1>
+
+        <div class="row" style="padding-top: 20px;">
+          <div class="form-inline col-md-6 col-md-offset-3"><i class="fa fa-info"></i>
+            <input name="name" type="text" class="form-control" placeholder="Name" aria-describedby="Insert your name">
+            <input name="surname" type="text" class="form-control" placeholder="Surname" aria-describedby="Insert your surname">
+          </div>
         </div>
 
         <div class="row" style="padding-top: 20px;">
@@ -93,16 +102,16 @@
         </div>
 
         <div class="row" style="padding-top: 20px;">
-          <h1 class="center">Upload your curriculum</h2>
+          <h1 class="center">Upload your curriculum</h1>
           <div class="form-inline col-md-6 col-md-offset-3">
             <input name="curriculum" type="file" class="form-control" placeholder="Curriculum" aria-describedby="Insert your curriculum">
           </div>
         </div>
 
         <div class="row" style="padding-top: 20px;">
-          <h1 class="center">Why are you interested in takeIT?</h2>
+          <h1 class="center">Why are you interested in takeIT?</h1>
           <div class="form-inline col-md-10 col-md-offset-1">
-            <textarea rows="10" maxlength="3000" style="width: 100%;"></textarea>
+            <textarea name="motivation" rows="10" maxlength="3000" style="width: 100%; font-size: 16px;"></textarea>
           </div>
         </div>
 
