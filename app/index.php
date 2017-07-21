@@ -23,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EIA TakeIt</title>
 
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,400italic,600,300italic,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='../css/font.css' rel='stylesheet' type='text/css'>
   <!-- Bootstrap -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/font-awesome.min.css" rel="stylesheet">
@@ -67,7 +67,6 @@
             <li><a class="nav-item-href" href="./search.php">Search</a></li>
             <li><a class="nav-item-href" href="./add.php">Add</a></li>
             <li><a class="nav-item-href" href="../">Log out</a></li>
-            <li><a href="profile.php" class="profile-img-href"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>

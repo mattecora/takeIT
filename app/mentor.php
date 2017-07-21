@@ -22,7 +22,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>EIA TakeIt</title>
 
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,400italic,600,300italic,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+		<link href='../css/font.css' rel='stylesheet' type='text/css'>
 		<!-- Bootstrap -->
 		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/font-awesome.min.css" rel="stylesheet">

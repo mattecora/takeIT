@@ -3,9 +3,10 @@
   check_logged();
 
   if (!empty($_POST["company"]) && !empty($_POST["date"]) && !empty($_POST["title"]) && !empty($_POST["position"]) && !empty($_POST["description"])) {
+    $text = str_replace("'", "\'", $_POST["description"]);
     $db = db_connect();
     $query = $db->query("INSERT INTO experience(Company, Date, User, Position, Title, Description) VALUES
-      ('$_POST[company]', '$_POST[date]', '$_SESSION[user]', '$_POST[position]', '$_POST[title]', '$_POST[description]')");
+      ('$_POST[company]', '$_POST[date]', '$_SESSION[user]', '$_POST[position]', '$_POST[title]', '$text')");
     $db->close();
   }
 ?>
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EIA TakeIt</title>
 
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,400italic,600,300italic,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='../css/font.css' rel='stylesheet' type='text/css'>
   <!-- Bootstrap -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/font-awesome.min.css" rel="stylesheet">
