@@ -72,7 +72,7 @@
 							<div class="hero-txt">
 								<p class="hero-work" style="font-size: 36px; line-height: 50px;">Mentors - Experiences - Young Talents</p>
 								<h2 class="hero-title">A ticket for your dream job</h2>
-								<a href="signup.php"><button class="btn btn-main btn-lg">Get Started</button></a>
+								<a href="#subscribe"><button class="btn btn-main btn-lg">Get Started</button></a>
 							</div>
 
 						</div>
@@ -87,8 +87,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="section-title st-center">
-							<h3>What we do</h3>
-							<p>We create a connection between you and real workers</p>
+							<h3>A ticket for your success</h3>
+							<p>Get connected with the job market</p>
 						</div>
 						<div class="row">
 							<div class="col-md-4">
@@ -155,33 +155,33 @@
 								<li>
 									<div class="testimonial">
 										<div class="testimonial-img">
-											<img src="photos/client1.jpg" alt="">
+											<img src="photos/client1_new.jpg" alt="" style="width: 150px;">
 										</div>
 										<blockquote>
 											<p>It’s awesome, really. I can’t say enough about how well the service is designed to every student's need, interest and skills. Overall, TakeIT has allowed me to get an edge on the competition and to go above and beyond my expectations.</p>
-											<footer>Benedetta Fassino, <cite title="Source Title">Example Inc.</cite></footer>
+											<footer>Paola Peterson</footer>
 										</blockquote>
 									</div>
 								</li>
 								<li>
 									<div class="testimonial">
 										<div class="testimonial-img">
-											<img src="photos/client2.jpg" alt="">
+											<img src="photos/client2_new.jpg" alt="" style="width: 150px;">
 										</div>
 										<blockquote>
-											<p>Thanks to TakeIT I was committed to continuously learning through mine mentorship program: amazing!</p>
-											<footer>John Ford, <cite title="Source Title">Example Inc.</cite></footer>
+											<p>Thanks to TakeIT I was committed to continuously learning through mine mentorship program: amazing! The experiences are really valuable and give you an extraordinary industry insight.</p>
+											<footer>Alex Wilson</footer>
 										</blockquote>
 									</div>
 								</li>
 								<li>
 									<div class="testimonial">
 										<div class="testimonial-img">
-											<img src="photos/client3.jpg" alt="">
+											<img src="photos/client3_new.jpg" alt="" style="width: 150px;">
 										</div>
 										<blockquote>
-											<p>I love this guys providing me an excellent service: they are continuously planning for improvement.</p>
-											<footer>Arthur Fernandez, <cite title="Source Title">Example Inc.</cite></footer>
+											<p>I love this guys providing me an excellent service: they are continuously planning for improvement. It suited my needs the best. You are never the smartest person in the room with takeIT!</p>
+											<footer>Diane Baker</footer>
 										</blockquote>
 									</div>
 								</li>
@@ -230,7 +230,7 @@
 					<div class="col-md-6">
 						<div class="faq">
 							<h3><i class="fa fa-question-circle"></i> 1. What is takeIT and why should I subscribe to it? </h3>
-							<p>TakeIT is a platform that fills the gap between students and job market. You will have access not only to thousands of experiences from professionals and mentors, but you will have the opportunity to be selected for our mentorship program: a customized program that suits your interests and skills.</p>
+							<p>TakeIT is a platform that fills the gap between students and job market. You will have access not only to thousands of experiences from professionals and mentors, but you will also have the opportunity to be selected for our mentorship program: a customized program that suits your interests and skills.</p>
 						</div>
 						<div class="faq">
 							<h3><i class="fa fa-question-circle"></i> 2. Is it a free platform?</h3>
@@ -239,11 +239,11 @@
 					</div>
 					<div class="col-md-6">
 						<div class="faq">
-							<h3><i class="fa fa-question-circle"></i> 3. How can I get into a mentorship program? Are there any specific requirements in order to get access to the program?</h3>
-							<p>We are going to select the students that are eligible to be mentored by looking at the curriculum of the candidates and by making an overall valuation. There aren't any specific requirements, but the main criteria for the profile valuation will be your GPA, international experience and your motivational letter that you will have to submit during the application process. The mentorship program is free, being based on merit.</p>
+							<h3><i class="fa fa-question-circle"></i> 3. How can I get into a mentorship program? Are there any specific requirements?</h3>
+							<p>We are going to select the students that are eligible to be mentored by looking at the curriculum of the candidates and by making an overall valuation. The main criteria will be your GPA, international experience and your motivational letters. The mentorship program is free, being based on merit.</p>
 						</div>
 						<div class="faq">
-							<h3><i class="fa fa-question-circle"></i> 4. How can you guarantee that the person that write the experience actually had that particular experience?</h3>
+							<h3><i class="fa fa-question-circle"></i> 4. How can you guarantee that the person that writes the experience actually did it?</h3>
 							<p>We are going to submit surveys to every mentor and professional that is on the platform, so that we can use them as a sign of truth.</p>
 						</div>
 					</div>

@@ -51,7 +51,7 @@
             <li><a href="./#about">About</a></li>
             <li><a href="./#subscribe">Subscribe</a></li>
             <li><a href="./#faq">FAQ</a></li>
-            <li><a href="login.php">Login</a></li>
+            <li class="active"><a href="login.php">Login</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
