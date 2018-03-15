@@ -2,31 +2,22 @@
   include("functions.php");
   check_logged();
 
-  if (empty($_GET["id"])) {
+  if (empty($_GET["user"]) || empty($_GET["datetime"])) {
     include("error.php");
     die();
   }
 
   $db = db_connect();
 
-  /* Get the experience info */
-  $query_info = $db->query("SELECT * FROM experience WHERE Id = $_GET[id]");
-  $info = $query_info->fetch_assoc();
+  /* Check data */
+  $query_info = $db->query("SELECT * FROM request WHERE User = '$_GET[user]' AND Mentor = '$_SESSION[user]' AND Datetime = '$_GET[datetime]'")->fetch_assoc();
+  if (!$query_info) {
+    include("error.php");
+    die();
+  }
 
-  /* Execute vote */
-  if (isset($_POST["frmname"]) && $_POST["frmname"] == "vote")
-    $query_vote = $db->query("INSERT INTO vote VALUES ($_GET[id], '$_SESSION[user]')");
-
-  /* Check if user can vote */
-  $query_check_vote = $db->query("SELECT * FROM vote WHERE User = '$_SESSION[user]' AND Id = $_GET[id]");
-  if ($query_check_vote->num_rows == 0 && $info["User"] != $_SESSION["user"])
-    $can_vote = true;
-  else $can_vote = false;
-
-  /* Check votes number */
-  $info["Votes"] = count_votes($db, $_GET["id"]);
-
-  $mail = $db->query("SELECT Mail FROM user WHERE User = '$info[User]'")->fetch_array()[0];
+  /* Retrieve user data */
+  $user_info = $db->query("SELECT * FROM user WHERE User = '$_GET[user]'")->fetch_assoc();
 
   $db->close();
 ?>
@@ -71,12 +62,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="nav-item-href" href="./index.php">Dashboard</a></li>
-            <li><a class="nav-item-href" href="./mentor.php">Mentor</a></li>
-            <li class="active"><a class="nav-item-href" href="./search.php">Search</a></li>
-            <li><a class="nav-item-href" href="./add.php">Add</a></li>
+            <li class="active"><a class="nav-item-href" href="./index.php">Dashboard</a></li>
             <li><a class="nav-item-href" href="../">Log out</a></li>
-            <li><a href="profile.php" class="profile-img-href"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
+            <li><a href="mentor.php" class="profile-img-href"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
@@ -88,70 +76,65 @@
       <div class="row">
         <div class="col-md-12">
             <div class="hero-txt">
-              <h2 class="hero-title"><?php echo $info["Title"]; ?></h2>
+              <h2 class="hero-title">View request</h2>
             </div>
-        </div>
-        <div class="row-fluid row-info-exp">
-          <div class="col-md-2 col-md-offset-1">
-            <i class="fa fa-calendar"></i><p><?php echo $info["Date"]; ?></p>
-          </div>
-          <div class="col-md-2">
-            <i class="fa fa-building"></i><p><?php echo $info["Company"]; ?></p>
-          </div>
-          <div class="col-md-2">
-            <i class="fa fa-briefcase"></i><p><?php echo $info["Position"]; ?></p>
-          </div>
-          <div class="col-md-2">
-            <i class="fa fa-user"></i><p><?php echo $info["User"]; ?></p>
-          </div>
-          <div class="col-md-2">
-            <i class="fa fa-thumbs-up"></i><p><?php echo $info["Votes"]; ?></p>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="container">
-    <?php
-      if (isset($query_purchase) && $query_purchase == true)
-        draw_msg_ok("You successfully purchased this experience!");
-      else if (isset($query_purchase) && $query_purchase == false)
-        draw_msg_err("There was an error in purchasing this experience!");
-    ?>
-  </div>
-
   <!-- Content -->
   <section class="content">
     <div class="container">
-      <?php
-        /* Show experience */
-        echo "<p>" . $info["Description"] . "</p>";
-      ?>
+      <?php if ($query_info["Completed"] == 0) { ?>
 
-      <p class="center">
-        <a href="mailto:<?php echo $mail; ?>">
-          <button type="button" class="btn btn-primary">
-            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Get in touch with this person
-          </button>
-        </a>
-      </p>
+      <h1 class="center">Status: active request</h1>
 
-      <?php
-        /* Vote button */
-        if ($can_vote) {
-          echo "<form method=\"post\">
-          <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">
-            <span style=\"font-size: 100%;\" class=\"glyphicon glyphicon-thumbs-up\"></span> Vote this experience!
-          </button></p>
-          <input type=\"hidden\" name=\"frmname\" value=\"vote\"/>
-          </form>";
+      <form action="index.php" method="post">
+        <input name="complete" type="hidden" value="complete">
+        <input name="user" type="hidden" value="<?php echo $_GET["user"]; ?>">
+        <input name="datetime" type="hidden" value="<?php echo $_GET["datetime"]; ?>">
+        <p class="center"><button class="btn btn-success"><i class="fa fa-check"></i> Complete this request</button></p>
+      </form>
+
+      <?php } else if (!is_null($query_info["Vote"])) {
+          echo "<h1 class=\"center\">Status: completed request ($query_info[Vote] <i class=\"fa fa-star\"></i>)</h1>";
+        } else {
+          echo "<h1 class=\"center\">Status: completed request (no vote yet)</h1>";
         }
       ?>
 
-      <p class="center"><button class="btn btn-primary" onclick="window.history.back();">
-        <span style="font-size: 100%" class="glyphicon glyphicon-arrow-left"></span> Go back
-      </button></p>
+      <div class="row">
+        <!-- Profile pic -->
+        <div class="col-md-4">
+          <div class="center">
+            <h3>User pic</h3>
+            <hr>
+            <img src="../photos/profile.png" style="width: 40%;">
+          </div>
+        </div>
+
+        <!-- Login data -->
+        <div class="col-md-4">
+          <div class="center">
+            <h3>User info</h3>
+            <hr>
+            <p>Name: <?php echo $user_info["Name"]; ?></p>
+            <p>Surname: <?php echo $user_info["Surname"]; ?></p>
+            <p>University: <?php echo $user_info["University"]; ?></p>
+            <p>Sector: <?php echo $user_info["Sector"]; ?></p>
+          </div>
+        </div>
+
+        <!-- Contacts -->
+        <div class="col-md-4">
+          <div class="center">
+            <h3>User contact</h3>
+            <hr>
+            <p>Mail: <?php echo "<a href=\"mailto:$user_info[Mail]\">$user_info[Mail]</a>"; ?></p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

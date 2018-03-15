@@ -5,7 +5,7 @@
   }
 
   function check_login($db, $user, $pass) {
-    $query = $db->query("SELECT Password FROM user WHERE User = '$user'");
+    $query = $db->query("SELECT Password FROM mentor WHERE Mentor = '$user'");
     $res = $query->fetch_array()[0];
     if ($res == $pass)
       return true;
@@ -36,10 +36,6 @@
     echo "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">
       <p><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span> $msg </p>
     </div>";
-  }
-
-  function count_votes($db, $id) {
-    return $db->query("SELECT COUNT(*) FROM vote WHERE Id = $id")->fetch_array()[0];
   }
 
   function mentor_vote($db, $mentor) {

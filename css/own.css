@@ -119,11 +119,6 @@ html, body {
   padding: 15px;
 }
 
-.src-tab-head {
-  display: flex;
-  justify-content: space-between;
-}
-
 .src-tab-head h3 {
   color: #337ab7;
   font-size: 36px;
@@ -133,23 +128,13 @@ html, body {
   color: #286090;
 }
 
-.src-tab-title {
-  float: left;
-}
-
 .src-tab-votes {
   float: right;
   text-align: right;
 }
 
 .src-tab-info {
-  border: none;
-  width: 100%;
   font-size: 26px;
-}
-
-.src-tab-info td {
-  width: 50%;
   padding: 10px;
 }
 

@@ -5,10 +5,15 @@
 	$db = db_connect();
 	$user = $db->query("SELECT * FROM user WHERE User = '$_SESSION[user]'")->fetch_array();
 
-	if (is_null($user["Mentor"])) {
-		$mentor = false;
-	} else {
-		$mentor = $db->query("SELECT * FROM mentor WHERE Mentor = '$user[Mentor]'")->fetch_array();
+	/* Make a request */
+	if (isset($_POST["request_post"])) {
+		$db->query("INSERT INTO request VALUES ('$_SESSION[user]', '$_POST[mentor]', NOW(), 0, NULL)");
+		echo $db->error;
+	}
+
+	/* Vote */
+	if (isset($_POST["vote_post"])) {
+		$db->query("UPDATE request SET Vote = $_POST[vote] WHERE User = '$_SESSION[user]' AND Mentor = '$_POST[mentor]' AND Datetime = '$_POST[datetime]'");
 	}
 
 	$db->close();
@@ -62,7 +67,7 @@
 	        <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
 	          <ul class="nav navbar-nav navbar-right">
 	            <li><a class="nav-item-href" href="./index.php">Dashboard</a></li>
-	            <li class="active"><a class="nav-item-href" href="./mentor.php">My mentor</a></li>
+	            <li class="active"><a class="nav-item-href" href="./mentor.php">Mentor</a></li>
 	            <li><a class="nav-item-href" href="./search.php">Search</a></li>
 	            <li><a class="nav-item-href" href="./add.php">Add</a></li>
 	            <li><a class="nav-item-href" href="../">Log out</a></li>
@@ -78,7 +83,7 @@
 	      <div class="row">
 	        <div class="col-md-12">
 	            <div class="hero-txt">
-	              <h2 class="hero-title">Talk with your mentor</h2>
+	              <h2 class="hero-title">Talk with a mentor</h2>
 	            </div>
 	        </div>
 	      </div>
@@ -88,41 +93,146 @@
 		<!-- Content -->
 	  <section class="content">
 	    <div class="container">
+				<h1 class="center">Active requests</h1>
+				<hr>
+				<div class="row">
+					<?php
+						$db = db_connect();
+						$db2 = db_connect();
+
+						$query = $db->query("SELECT * FROM request WHERE User = '$_SESSION[user]' AND Completed = 0");
+						if ($query->num_rows == 0)
+							echo "<h3 class=\"center\">No active requests</h3>";
+
+						while ($row = $query->fetch_assoc()) {
+							$mentor = $db2->query("SELECT * FROM mentor WHERE Mentor = '$row[Mentor]'")->fetch_assoc();
+							echo "<div class=\"col-md-12 src-tab\">
+	              <div class=\"src-tab-left\">
+	                <img src=\"../photos/profile.png\" style=\"width: 100%;\">
+	              </div>
+	              <div class=\"src-tab-right\">
+									<div class=\"src-tab-head row\">
+										<div class=\"col-md-6\"><h3>$mentor[Name] $mentor[Surname]</h3></div>
+										<div class=\"col-md-6\" style=\"text-align: right;\"><h3><i class=\"fa fa-calendar\"></i> $row[Datetime]</h3></div>
+									</div>
+									<hr>
+	                <div class=\"src-tab-info row\">
+	                  <div class=\"col-md-6\"><i class=\"fa fa-user\"></i> $mentor[Mentor]</div>
+										<div class=\"col-md-6\"><i class=\"fa fa-star\"></i> Not completed</div>
+	                </div>
+	                <div class=\"src-tab-info row\">
+	                  <div class=\"col-md-6\"><i class=\"fa fa-university\"></i> $mentor[Company]</div>
+	                  <div class=\"col-md-6\"><i class=\"fa fa-briefcase\"></i> $mentor[Area]</div>
+	                </div>
+	              </div>
+	            </div>";
+						}
+					?>
+				</div>
+
+				<h1 class="center">Completed requests</h1>
+				<hr>
+				<div class="row">
+					<?php
+						$query = $db->query("SELECT * FROM request WHERE User = '$_SESSION[user]' AND Completed = 1 ORDER BY Datetime DESC");
+						if ($query->num_rows == 0)
+							echo "<h3 class=\"center\">No completed requests</h3>";
+
+						while ($row = $query->fetch_assoc()) {
+							$mentor = $db2->query("SELECT * FROM mentor WHERE Mentor = '$row[Mentor]'")->fetch_assoc();
+							if (!is_null($row["Vote"]))
+								$vote = $row["Vote"];
+							else $vote = 5;
+
+							echo "<div class=\"col-md-12 src-tab\">
+	              <div class=\"src-tab-left\">
+	                <img src=\"../photos/profile.png\" style=\"width: 100%;\">
+	              </div>
+	              <div class=\"src-tab-right\">
+									<div class=\"src-tab-head row\">
+										<div class=\"col-md-6\"><h3>$mentor[Name] $mentor[Surname]</h3></div>
+										<div class=\"col-md-6\" style=\"text-align: right;\"><h3><i class=\"fa fa-calendar\"></i> $row[Datetime]</h3></div>
+									</div>
+									<hr>
+	                <div class=\"src-tab-info row\">
+	                  <div class=\"col-md-6\"><i class=\"fa fa-user\"></i> $mentor[Mentor]</div>
+										<div class=\"col-md-6\">
+											<div class=\"form-inline\">
+												<form method=\"post\" action\"mentor.php\">
+													<i class=\"fa fa-star\"></i>
+													<input name=\"vote_post\" type=\"hidden\" value=\"vote_post\">
+													<input name=\"mentor\" type=\"hidden\" value=\"$mentor[Mentor]\">
+													<input name=\"datetime\" type=\"hidden\" value=\"$row[Datetime]\">";
+
+							if (!is_null($row["Vote"])) {
+								echo $row["Vote"];
+							} else {
+								echo "<select name=\"vote\">
+									<option value=\"1\">1</option>
+									<option value=\"2\">2</option>
+									<option value=\"3\">3</option>
+									<option value=\"4\">4</option>
+									<option value=\"5\" selected=\"selected\">5</option>
+								</select>
+								<button class=\"btn btn-success\" type=\"submit\"><i class=\"fa fa-check\"></i> Vote</button>";
+							}
+
+							echo "</form>
+											</div>
+										</div>
+	                </div>
+	                <div class=\"src-tab-info row\">
+	                  <div class=\"col-md-6\"><i class=\"fa fa-university\"></i> $mentor[Company]</div>
+	                  <div class=\"col-md-6\"><i class=\"fa fa-briefcase\"></i> $mentor[Area]</div>
+	                </div>
+	              </div>
+	            </div>";
+						}
+					?>
+				</div>
+
+	      <h1 class="center">Make a new request</h1>
+				<hr>
 	      <div class="row">
-	        <!-- Profile pic -->
-	        <div class="col-md-4">
-	          <div class="center">
-	            <h3>Mentor pic</h3>
-	            <hr>
-	            <img src="../photos/profile.png" style="width: 40%;">
-	          </div>
-	        </div>
+	        <?php
+						$query = $db->query("SELECT * FROM mentor WHERE Area = '$user[Sector]' AND Mentor NOT IN (SELECT Mentor FROM request WHERE User = '$_SESSION[user]' AND Completed = 0)");
+						if ($query->num_rows == 0)
+							echo "<h3 class=\"center\">No mentors</h3>";
 
-	        <!-- Login data -->
-	        <div class="col-md-4">
-	          <div class="center">
-	            <h3>Mentor data</h3>
-	            <hr>
-							<?php
-								if (!$mentor) echo "<p>No mentor yet</p>";
-							?>
-	            <p>Name: <?php if ($mentor) echo $mentor["Name"]; else echo "None"; ?></p>
-	            <p>Surname: <?php if ($mentor) echo $mentor["Surname"]; else echo "None"; ?></p>
-	          </div>
-	        </div>
+	          while ($row = $query->fetch_assoc()) {
+							$vote = round(mentor_vote($db2, $row["Mentor"]), 1);
 
-	        <!-- Contributions -->
-	        <div class="col-md-4">
-	          <div class="center">
-	            <h3>Mentor contact</h3>
-	            <hr>
-							<?php
-								if (!$mentor) echo "<p>No mentor yet</p>";
-							?>
-	            <p>Mail: <?php if ($mentor) echo "<a href=\"mailto:$mentor[Contact]\">$mentor[Contact]</a>"; else echo "None"; ?></p>
-	          </div>
-	        </div>
-	      </div>
+							echo "<div class=\"col-md-12 src-tab\">
+	              <div class=\"src-tab-left\">
+	                <img src=\"../photos/profile.png\" style=\"width: 100%;\">
+	              </div>
+	              <div class=\"src-tab-right\">
+	                <div class=\"src-tab-head row\">
+	                  <div class=\"col-md-10\"><h3>$row[Name] $row[Surname]</h3></div>
+	                  <div class=\"col-md-2\" style=\"text-align: right;\"><h3><i class=\"fa fa-star\"></i> $vote</h3></div>
+	                </div>
+	                <hr>
+	                <div class=\"src-tab-info row\">
+	                  <div class=\"col-md-6\"><i class=\"fa fa-user\"></i> $row[Mentor]</div>
+	                </div>
+	                <div class=\"src-tab-info row\">
+	                  <div class=\"col-md-6\"><i class=\"fa fa-university\"></i> $row[Company]</div>
+	                  <div class=\"col-md-6\"><i class=\"fa fa-briefcase\"></i> $row[Area]</div>
+	                </div>
+									<div class=\"form-inline center\" style=\"padding-top: 10px\">
+										<form method=\"post\" action\"mentor.php\">
+											<input name=\"request_post\" type=\"hidden\" value=\"request_post\">
+											<input name=\"mentor\" type=\"hidden\" value=\"$row[Mentor]\">
+											<button class=\"btn btn-success\" type=\"submit\"><i class=\"fa fa-comment\"></i> Contact this mentor</button>
+										</form>
+									</div>
+	              </div>
+	            </div>";
+	          }
+
+          	$db->close();
+						$db2->close();
+	        ?>
 	    </div>
 	  </section>
 

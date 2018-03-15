@@ -2,11 +2,17 @@
   include("app/functions.php");
   reset_login();
 
+  $db = db_connect();
+
   if (!empty($_POST["mc-email"])) {
-    $db = db_connect();
     $db->query("INSERT INTO newsletter VALUES ('" . $_POST["mc-email"] . "')");
-    $db->close();
   }
+
+  $num_stud = $db->query("SELECT COUNT(*) FROM user")->fetch_array()[0];
+  $num_exps = $db->query("SELECT COUNT(*) FROM experience")->fetch_array()[0];
+  $num_ment = $db->query("SELECT COUNT(*) FROM mentor")->fetch_array()[0];
+
+  $db->close();
 ?>
 
 <!DOCTYPE html>
@@ -124,22 +130,22 @@
 					<div class="col-md-4">
 						<div class="funfact">
 							<div class="st-funfact-icon"><i class="fa fa-users"></i></div>
-							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="5000" data-runit="1">0</span>+</div>
-							<strong class="funfact-title">Community</strong>
+							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="<?php echo $num_stud; ?>" data-runit="1">0</span>+</div>
+							<strong class="funfact-title">Students</strong>
 						</div><!-- .funfact -->
 					</div>
 					<div class="col-md-4">
 						<div class="funfact">
 							<div class="st-funfact-icon"><i class="fa fa-pencil-square-o"></i></div>
-							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="18300" data-runit="1">0</span>+</div>
+							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="<?php echo $num_exps; ?>" data-runit="1">0</span>+</div>
 							<strong class="funfact-title">Experiences Shared</strong>
 						</div><!-- .funfact -->
 					</div>
 					<div class="col-md-4">
 						<div class="funfact">
-							<div class="st-funfact-icon"><i class="fa fa-building-o"></i></div>
-							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="8740" data-runit="1">0</span>+</div>
-							<strong class="funfact-title">Connections Created</strong>
+							<div class="st-funfact-icon"><i class="fa fa-graduation-cap"></i></div>
+							<div class="st-funfact-counter" ><span class="st-ff-count" data-from="0" data-to="<?php echo $num_ment; ?>" data-runit="1">0</span>+</div>
+							<strong class="funfact-title">Mentors</strong>
 						</div><!-- .funfact -->
 					</div>
 				</div>
@@ -262,7 +268,6 @@
             <li><a href="#subscribe">Subscribe</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="login.php">Login</a></li>
-            <li><a href="signup.php">Signup</a></li>
           </ul>
 				</div>
 

@@ -28,7 +28,7 @@ $(document).ready(function () {
 		$affected.each(function(i) {
 			if (parseInt($(this).data('runit'))) {
 				$(this).countTo({
-					speed: 3000,
+					speed: 1000,
 					refreshInterval: 50
 				});
 				$(this).data('runit', "0");

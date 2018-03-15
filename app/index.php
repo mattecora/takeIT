@@ -63,7 +63,7 @@
         <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a class="nav-item-href" href="./index.php">Dashboard</a></li>
-            <li><a class="nav-item-href" href="./mentor.php">My mentor</a></li>
+            <li><a class="nav-item-href" href="./mentor.php">Mentor</a></li>
             <li><a class="nav-item-href" href="./search.php">Search</a></li>
             <li><a class="nav-item-href" href="./add.php">Add</a></li>
             <li><a class="nav-item-href" href="../">Log out</a></li>
@@ -95,7 +95,7 @@
           <a href="mentor.php">
             <div class="st-feature">
               <div class="st-feature-icon" style="height: 250px; width: 250px; line-height: 250px; font-size: 90px;"><i class="fa fa-graduation-cap"></i></div>
-              <strong class="st-feature-title">Contact your mentor</strong>
+              <strong class="st-feature-title">Contact a mentor</strong>
             </div>
           </a>
         </div>

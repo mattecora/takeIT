@@ -2,31 +2,20 @@
   include("functions.php");
   check_logged();
 
+  $db = db_connect();
+
   if (empty($_GET["id"])) {
     include("error.php");
     die();
   }
 
-  $db = db_connect();
+  $query_check = $db->query("SELECT * FROM user WHERE User = '$_GET[id]' AND Mentor = '$_SESSION[user]'");
+  if ($query_check->num_rows == 0) {
+    include("error.php");
+    die();
+  }
 
-  /* Get the experience info */
-  $query_info = $db->query("SELECT * FROM experience WHERE Id = $_GET[id]");
-  $info = $query_info->fetch_assoc();
-
-  /* Execute vote */
-  if (isset($_POST["frmname"]) && $_POST["frmname"] == "vote")
-    $query_vote = $db->query("INSERT INTO vote VALUES ($_GET[id], '$_SESSION[user]')");
-
-  /* Check if user can vote */
-  $query_check_vote = $db->query("SELECT * FROM vote WHERE User = '$_SESSION[user]' AND Id = $_GET[id]");
-  if ($query_check_vote->num_rows == 0 && $info["User"] != $_SESSION["user"])
-    $can_vote = true;
-  else $can_vote = false;
-
-  /* Check votes number */
-  $info["Votes"] = count_votes($db, $_GET["id"]);
-
-  $mail = $db->query("SELECT Mail FROM user WHERE User = '$info[User]'")->fetch_array()[0];
+  $info = $db->query("SELECT * FROM user WHERE User = '$_GET[id]'")->fetch_array();
 
   $db->close();
 ?>
@@ -34,9 +23,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EIA TakeIt</title>
 
   <link href='../css/font.css' rel='stylesheet' type='text/css'>
@@ -49,9 +38,16 @@
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/footer.css" rel="stylesheet">
   <link href="../css/own.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
 </head>
-<body>
-  <!-- Navbar -->
+<body data-spy="scroll" data-target=".main-nav">
+
   <header class="st-navbar">
     <nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
       <div class="container"><!-- Brand and toggle get grouped for better mobile display -->
@@ -63,7 +59,7 @@
             <span class="icon-bar"></span>
           </button>
           <ul class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sept-main-nav" style="border: 0px;">
-            <li><a href="profile.php" style="padding-top:27px; height: 102px;"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
+            <li><a href="" style="padding-top:27px; height: 102px;"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
           </ul>
           <a class="navbar-brand" href="../"><img src="../photos/logo_white.png" alt="" class="img-responsive"></a>
         </div>
@@ -71,12 +67,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="nav-item-href" href="./index.php">Dashboard</a></li>
-            <li><a class="nav-item-href" href="./mentor.php">Mentor</a></li>
-            <li class="active"><a class="nav-item-href" href="./search.php">Search</a></li>
-            <li><a class="nav-item-href" href="./add.php">Add</a></li>
+            <li class="active"><a class="nav-item-href" href="./index.php">Dashboard</a></li>
             <li><a class="nav-item-href" href="../">Log out</a></li>
-            <li><a href="profile.php" class="profile-img-href"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
+            <li><a href="mentor.php" class="profile-img-href"><img src="../photos/profile.png" style="height: 50px;"/></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
@@ -88,70 +81,46 @@
       <div class="row">
         <div class="col-md-12">
             <div class="hero-txt">
-              <h2 class="hero-title"><?php echo $info["Title"]; ?></h2>
+              <h2 class="hero-title">Profile info</h2>
             </div>
-        </div>
-        <div class="row-fluid row-info-exp">
-          <div class="col-md-2 col-md-offset-1">
-            <i class="fa fa-calendar"></i><p><?php echo $info["Date"]; ?></p>
-          </div>
-          <div class="col-md-2">
-            <i class="fa fa-building"></i><p><?php echo $info["Company"]; ?></p>
-          </div>
-          <div class="col-md-2">
-            <i class="fa fa-briefcase"></i><p><?php echo $info["Position"]; ?></p>
-          </div>
-          <div class="col-md-2">
-            <i class="fa fa-user"></i><p><?php echo $info["User"]; ?></p>
-          </div>
-          <div class="col-md-2">
-            <i class="fa fa-thumbs-up"></i><p><?php echo $info["Votes"]; ?></p>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="container">
-    <?php
-      if (isset($query_purchase) && $query_purchase == true)
-        draw_msg_ok("You successfully purchased this experience!");
-      else if (isset($query_purchase) && $query_purchase == false)
-        draw_msg_err("There was an error in purchasing this experience!");
-    ?>
-  </div>
-
   <!-- Content -->
   <section class="content">
     <div class="container">
-      <?php
-        /* Show experience */
-        echo "<p>" . $info["Description"] . "</p>";
-      ?>
+      <div class="row">
+        <!-- Profile pic -->
+        <div class="col-md-4">
+          <div class="center">
+            <h3>User pic</h3>
+            <hr>
+            <img src="../photos/profile.png" style="width: 40%;">
+          </div>
+        </div>
 
-      <p class="center">
-        <a href="mailto:<?php echo $mail; ?>">
-          <button type="button" class="btn btn-primary">
-            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Get in touch with this person
-          </button>
-        </a>
-      </p>
+        <!-- Login data -->
+        <div class="col-md-4">
+          <div class="center">
+            <h3>User info</h3>
+            <hr>
+            <p>Username: <?php echo $info["User"]; ?></p>
+            <p>Name: <?php echo $info["Name"]; ?></p>
+            <p>Surname: <?php echo $info["Surname"]; ?></p>
+          </div>
+        </div>
 
-      <?php
-        /* Vote button */
-        if ($can_vote) {
-          echo "<form method=\"post\">
-          <p class=\"center\"><button type=\"submit\" class=\"btn btn-success\">
-            <span style=\"font-size: 100%;\" class=\"glyphicon glyphicon-thumbs-up\"></span> Vote this experience!
-          </button></p>
-          <input type=\"hidden\" name=\"frmname\" value=\"vote\"/>
-          </form>";
-        }
-      ?>
-
-      <p class="center"><button class="btn btn-primary" onclick="window.history.back();">
-        <span style="font-size: 100%" class="glyphicon glyphicon-arrow-left"></span> Go back
-      </button></p>
+        <!-- Contributions -->
+        <div class="col-md-4">
+          <div class="center">
+            <h3>User contact</h3>
+            <hr>
+            <p>Mail: <?php echo "<a href=\"mailto:$info[Mail]\">$info[Mail]</a>"; ?></p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

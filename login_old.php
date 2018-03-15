@@ -57,30 +57,17 @@
     </nav>
   </header>
 
-  <section class="home loginhome" id="home" data-stellar-background-ratio="0.4" style="height: 100%;">
+  <section class="home bighome" id="home" data-stellar-background-ratio="0.4" style="height: 100%;">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-4 col-md-offset-4">
           <div class="st-home-unit">
             <div class="hero-txt">
-              <h2 class="hero-title">User</h2>
-              <form method="post" action="app/index.php" id="login_user_form">
+              <h2 class="hero-title">LOGIN</h2>
+              <form method="post" action="app/index.php" id="login_form">
                 <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
                 <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
-                <p class="center"><button type="submit" class="btn btn-primary">Login</button><button type="button" onclick="window.location.href='signup_user.php'" class="btn btn-primary" style="margin-left: 50px;">Signup</button></p>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-md-offset-1">
-          <div class="st-home-unit">
-            <div class="hero-txt">
-              <h2 class="hero-title">Mentor</h2>
-              <form method="post" action="mentor/index.php" id="login_mentor_form">
-                <p class="center"><input name="user" type="text" class="form-control" placeholder="Username" aria-describedby="Insert your username"></p>
-                <p class="center"><input name="pwd" type="password" class="form-control" placeholder="Password" aria-describedby="Insert your password"></p>
-                <p class="center"><button type="submit" class="btn btn-primary">Login</button><button type="button" onclick="window.location.href='signup_mentor.php'" class="btn btn-primary" style="margin-left: 50px;">Signup</button></p>
+                <p class="center"><button type="submit" class="btn btn-primary">Login</button><button type="button" onclick="window.location.href='signup.php'" class="btn btn-primary" style="margin-left: 50px;">Signup</button></p>
               </form>
             </div>
           </div>

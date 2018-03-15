@@ -64,7 +64,7 @@
         <div class="col-md-4 col-md-offset-4">
           <div class="st-home-unit">
             <div class="hero-txt">
-              <h2 class="hero-title">SIGNUP</h2>
+              <h2 class="hero-title">User signup</h2>
             </div>
           </div>
         </div>

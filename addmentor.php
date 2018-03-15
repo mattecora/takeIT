@@ -1,13 +1,13 @@
 <?php
 	include("app/functions.php");
 
-  if (empty($_POST["user"]) || empty($_POST["pwd"]) || empty($_POST["mail"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["age"]) || empty($_POST["university"]) || empty($_POST["sector"])) {
+  if (empty($_POST["user"]) || empty($_POST["pwd"]) || empty($_POST["mail"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["sector"]) || empty($_POST["company"])) {
     include("app/error.php");
     die();
   }
 
 	$db = db_connect();
-	$query = $db->query("INSERT INTO user VALUES ('$_POST[user]', '$_POST[mail]', '$_POST[name]', '$_POST[surname]', '$_POST[pwd]', NULL, $_POST[age], '$_POST[university]', '$_POST[sector]', '$_POST[motivation]')");
+	$query = $db->query("INSERT INTO mentor VALUES ('$_POST[user]', '$_POST[name]', '$_POST[surname]', '$_POST[pwd]', '$_POST[mail]',  '$_POST[sector]', '$_POST[company]')");
   $db->close();
 ?>
 
